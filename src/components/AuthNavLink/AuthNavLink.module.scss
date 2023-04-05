@@ -1,0 +1,17 @@
+@import '../../app/styles/';
+
+.link {
+  @include font(1.8rem, 2.7rem, 400, $color-font-button);
+
+  display: block;
+  width: 13rem;
+  padding-bottom: 1.6rem;
+  text-align: center;
+  text-transform: capitalize;
+  border-bottom: .2rem solid transparent;
+  transition: .5s;
+
+  &__active {
+    border-color: $color-accent;
+  }
+}

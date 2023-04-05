@@ -1,0 +1,19 @@
+@import '../../app/styles';
+
+.button {
+  @include font(1.6rem, 2.8rem, 600, $color-font-button);
+
+  width: 100%;
+  height: 100%;
+  text-transform: capitalize;
+  background: $color-accent;
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 .4rem 1rem #0000001A;
+  cursor: pointer;
+  transition: .3s;
+
+  &:active {
+    box-shadow: none;
+  }
+}

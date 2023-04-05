@@ -1,0 +1,26 @@
+@import '../../app/styles';
+
+.input {
+  @include font(1.4rem, 2.8rem, 500);
+
+  width: 100%;
+  padding-bottom: .6rem;
+  background: transparent;
+  border: none;
+  border-bottom: .1rem solid $color-font-main-light;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__label {
+    @include font(1.2rem, 2.8rem, 400);
+
+    display: block;
+    text-transform: capitalize;
+
+    &_wrapper {
+      position: relative;
+    }
+  }
+}

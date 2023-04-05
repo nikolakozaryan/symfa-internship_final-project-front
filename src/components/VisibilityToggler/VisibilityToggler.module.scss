@@ -1,0 +1,14 @@
+.toggler {
+  position: absolute;
+  right: 0;
+  bottom: .8rem;
+  width: 2.5rem;
+  height: 2.4rem;
+  background: url('../../shared/assets/icons/show-password-eye.svg') center;
+  border: none;
+  cursor: pointer;
+
+  &_active {
+    background: url('../../shared/assets/icons/show-password-eye-closed.svg') center;
+  }
+}

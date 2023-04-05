@@ -23,4 +23,11 @@
       position: relative;
     }
   }
+
+  &__error {
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    color: crimson;
+  }
 }

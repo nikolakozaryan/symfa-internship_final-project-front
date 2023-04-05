@@ -62,7 +62,7 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
         '@typescript-eslint/no-explicit-any': 'error',
         'react/require-default-props': 'off',
-        'react/jsx-props-no-spreading': 'error',
+        'react/jsx-props-no-spreading': 'off',
         'react/function-component-definition': 'off',
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'error',

@@ -1,19 +1,18 @@
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
+import type { SignInFormInputs } from './types';
 import { AuthFormLayout } from '../../layouts';
+import { login } from '../../shared/api/actions';
+import { useAppDispatch } from '../../store/services/appDispatch';
 import { AuthInput } from '../AuthInput/AuthInput';
 import { SubmitButton } from '../SubmitButton/SubmitButton';
 
 import styles from './Signin.module.scss';
 
-type FormInputs = {
-    email: string;
-    password: string;
-};
-
 export const Signin = () => {
-    const methods = useForm<FormInputs>({ reValidateMode: 'onChange' });
-    const onSubmit: SubmitHandler<FormInputs> = data => console.log(data);
+    const dispatch = useAppDispatch();
+    const methods = useForm<SignInFormInputs>({ reValidateMode: 'onChange' });
+    const onSubmit: SubmitHandler<SignInFormInputs> = data => dispatch(login(data));
 
     return (
         <AuthFormLayout type="signin">

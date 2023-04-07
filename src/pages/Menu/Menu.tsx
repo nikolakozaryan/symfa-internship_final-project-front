@@ -1,8 +1,12 @@
 import { Outlet } from 'react-router-dom';
 
+import { MenuNavigation } from '../../components/MenuNavigation';
+
 export const Menu = () => (
     <div>
         <Outlet />
-        <footer>Footer</footer>
+        <footer>
+            <MenuNavigation />
+        </footer>
     </div>
 );

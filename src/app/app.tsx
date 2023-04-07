@@ -4,7 +4,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { refresh } from '../shared/api/actions';
 import { useAppSelector } from '../store/selectors/appSelector';
 import { useAppDispatch } from '../store/services/appDispatch';
-import { isTokenValid } from '../utils/validateJwt';
+import { isTokenExpired } from '../utils/validateJwt';
 
 export const App = () => {
     const { pathname } = useLocation();
@@ -14,15 +14,22 @@ export const App = () => {
     const rt = useAppSelector(state => state.auth.rt);
 
     useEffect(() => {
-        const isAtValid = isTokenValid(at);
+        const isAtExpired = isTokenExpired(at);
 
-        if (isAtValid && pathname.match(/^\/sign(in|up)/)) navigate('menu/home');
+        if (isAtExpired) {
+            const isRtExpired = isTokenExpired(rt);
 
-        if (!isAtValid) {
-            const isRtValid = isTokenValid(rt);
+            if (isRtExpired) {
+                if (pathname.match(/^\/menu/)) {
+                    navigate('/signin');
+                }
+            } else {
+                dispatch(refresh());
+            }
+        }
 
-            if (isRtValid) dispatch(refresh());
-            else if (pathname.match(/^\/menu/)) navigate('/signin');
+        if (!isAtExpired && pathname.match(/^\/sign(in|up)/)) {
+            navigate('menu/home');
         }
     }, [pathname, at, navigate, rt, dispatch]);
 

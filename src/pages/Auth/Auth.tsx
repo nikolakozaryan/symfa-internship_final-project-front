@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { AuthHeader } from '../../components/AuthHeader/AuthHeader';
+import { AuthHeader } from '../../components/AuthHeader';
 
 import styles from './Auth.module.scss';
 

@@ -1,0 +1,15 @@
+@import '../../app/styles';
+
+.nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  padding: 0 3.6rem;
+  background: $color-bg-item-light;
+}

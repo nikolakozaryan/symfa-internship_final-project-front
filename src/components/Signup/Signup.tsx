@@ -6,8 +6,8 @@ import { AuthFormLayout } from '../../layouts';
 import { login, register } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { AuthInput } from '../AuthInput/AuthInput';
-import { SubmitButton } from '../SubmitButton/SubmitButton';
+import { AuthInput } from '../AuthInput';
+import { SubmitButton } from '../SubmitButton';
 
 import styles from './Signup.module.scss';
 
@@ -34,10 +34,10 @@ export const Signup = () => {
         <AuthFormLayout type="signup">
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)} id="signup" className={styles.form}>
-                    <AuthInput inputType="username" />
-                    <AuthInput inputType="email" />
-                    <AuthInput inputType="password" />
-                    <AuthInput inputType="confirm" />
+                    <AuthInput form="signup" inputType="username" />
+                    <AuthInput form="signup" inputType="email" />
+                    <AuthInput form="signup" inputType="password" />
+                    <AuthInput form="signup" inputType="confirm" />
                 </form>
                 <p className={styles['button-container']}>
                     <SubmitButton form="signup" content="signup" />

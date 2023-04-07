@@ -1,15 +1,16 @@
+import { HALF_AN_HOUR } from '../shared/constants/time';
 import { parseJwt } from './parseJwt';
 
-export const isTokenValid = (token: string) => {
-    const userdata = parseJwt(token);
+export const isTokenExpired = (token: string) => {
+    const tokenData = parseJwt(token);
 
-    if (userdata) {
-        const { exp } = userdata;
+    if (tokenData) {
+        const { exp } = tokenData;
 
-        if (Date.now() < exp * 1000) {
-            return true;
+        if (Date.now() < (exp - HALF_AN_HOUR) * 1000) {
+            return false;
         }
     }
 
-    return userdata;
+    return true;
 };

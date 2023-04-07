@@ -4,11 +4,11 @@ import { useFormContext } from 'react-hook-form';
 import type { MyProps } from './types';
 import { getValidationOptions } from '../../shared/config/formValidationConfig';
 import { AUTH_INPUTS, RegisterType } from '../../shared/constants/authInputs';
-import { VisibilityToggler } from '../VisibilityToggler/VisibilityToggler';
+import { VisibilityToggler } from '../VisibilityToggler';
 
 import styles from './AuthInput.module.scss';
 
-export const AuthInput: FC<MyProps> = ({ inputType }) => {
+export const AuthInput: FC<MyProps> = ({ inputType, form }) => {
     const methods = useFormContext();
     const {
         formState: { errors },
@@ -28,7 +28,10 @@ export const AuthInput: FC<MyProps> = ({ inputType }) => {
         <label className={styles.input__label_wrapper} htmlFor={inputType}>
             <span className={styles.input__label}>{label}</span>
             <input
-                {...methods.register(registerName, getValidationOptions(methods, registerName as RegisterType))}
+                {...methods.register(
+                    registerName,
+                    form === 'signup' ? getValidationOptions(methods, registerName as RegisterType) : {},
+                )}
                 id={inputType}
                 className={styles.input}
                 type={dynamicType}

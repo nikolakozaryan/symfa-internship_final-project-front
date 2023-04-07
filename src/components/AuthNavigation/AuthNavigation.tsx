@@ -1,5 +1,5 @@
 import { AUTH_ROUTES } from '../../shared/constants/authRoutes';
-import { AuthNavLink } from '../AuthNavLink/AuthNavLink';
+import { AuthNavLink } from '../AuthNavLink';
 
 import styles from './AuthNaigation.module.scss';
 

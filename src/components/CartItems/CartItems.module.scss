@@ -1,0 +1,14 @@
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  &__container {
+    flex: 1;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../app/styles';
+
+.promo {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  height: 5.5rem;
+  padding: 1.1rem 1rem 1.1rem 2.1rem;
+  background: white;
+  border: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 .4rem 1.5rem #0000000D;
+
+  &__image {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  &__input {
+    @include font(1.4rem, 2.8rem, 500);
+
+    flex: 1;
+    height: 100%;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      @include font(1.4rem, 2.8rem, 500, #B5B5B5)
+    }
+  }
+
+  &__button {
+    @include font(1.3rem, 2.8rem, 600);
+
+    width: 7.6rem;
+    height: 3.3rem;
+    text-transform: capitalize;
+    background: $color-accent;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 .4rem 1rem #0000001A;
+  }
+}

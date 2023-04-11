@@ -10,4 +10,8 @@
   border-radius: 0 1.5rem;
   box-shadow: 0 .4rem .5rem #0000000D;
   cursor: pointer;
+
+  &:disabled {
+    filter: grayscale(1)
+  }
 }

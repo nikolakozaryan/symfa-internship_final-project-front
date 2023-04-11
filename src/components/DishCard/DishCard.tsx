@@ -8,9 +8,7 @@ import { FavButton } from '../FavButton';
 import styles from './DishCard.module.scss';
 
 export const DishCard: FC<Dish> = dish => {
-    const {
-        id, image, price, product, productName,
-    } = dish;
+    const { id, image, price, product, productName } = dish;
 
     return (
         <NavLink to={`../${id}`} className={styles.card}>
@@ -26,8 +24,7 @@ export const DishCard: FC<Dish> = dish => {
                 <span className={styles.card__price_currency}>$</span>
                 {price.toFixed(2)}
             </span>
-            <AddToCart id={id} />
-
+            <AddToCart dish={dish} />
         </NavLink>
     );
 };

@@ -19,6 +19,15 @@ export interface IUserState extends IState {
     favs: string[];
 }
 
+export interface ICartState extends IState {
+    dishes: CartDish[];
+}
+
+export type CartDish = {
+    dish: Dish;
+    amount: number;
+};
+
 interface IDishesState extends IState {
     search: string;
     page: number;

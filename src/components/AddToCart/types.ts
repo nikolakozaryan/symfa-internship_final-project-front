@@ -1,3 +1,5 @@
+import type { Dish } from '../../store/types/dish.types';
+
 export type MyProps = {
-    id: string;
+    dish: Dish;
 };

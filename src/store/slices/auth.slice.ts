@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { State } from './types';
+import type { IAuthState } from './types';
 import { login, refresh, register } from '../../shared/api/actions';
 
-const initialState: State = {
+const initialState: IAuthState = {
     at: localStorage.getItem('at') || '',
     rt: localStorage.getItem('rt') || '',
     errorMessage: '',

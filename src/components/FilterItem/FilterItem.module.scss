@@ -1,0 +1,19 @@
+@import '../../app/styles';
+
+.item {
+  @include font(1rem, 2.8rem, 600);
+
+  width: 9rem;
+  height: 3rem;
+  text-transform: capitalize;
+  background: white;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 .4rem .5rem #00000003;
+  cursor: pointer;
+  transition: .3s;
+
+  &_active {
+    background: $color-accent;
+  }
+}

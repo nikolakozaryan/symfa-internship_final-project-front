@@ -48,6 +48,7 @@ module.exports = {
         'plugin:promise/recommended',
     ],
     rules: {
+        'object-curly-newline': ['off', { multiline: true }],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
         indent: 'off',

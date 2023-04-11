@@ -15,28 +15,26 @@
   border: .2rem solid $color-bg-item-light;
   border-radius: 50%;
   box-shadow: 0 0 0 1rem $color-bg-light;
-  transform: translateY(-60%);
+  transform: translateY(-50%);
 
   &::before,
   &::after {
     position: absolute;
+    top: 2.3rem;
     width: 2rem;
     height: 2rem;
     background: transparent;
+    box-shadow: 0 -1rem 0 0 $color-bg-light;
     content: '';
   }
 
   &::before {
-    top: 2.8rem;
-    left: -2.6rem;
+    left: -2.8rem;
     border-top-right-radius: 2rem;
-    box-shadow: 0 -1rem 0 0 $color-bg-light;
   }
 
   &::after {
-    top: 2.8rem;
-    right: -2.6rem;
+    right: -2.8rem;
     border-top-left-radius: 2rem;
-    box-shadow: 0 -1rem 0 0 $color-bg-light;
   }
 }

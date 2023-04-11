@@ -1,0 +1,48 @@
+@import '../../app/styles';
+
+.searchbar {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3.5rem;
+
+  &__input {
+    @include font(1.4rem, 2.8rem, 400);
+
+    width: 24.1rem;
+    height: 4rem;
+    padding-left: 4.8rem;
+    background: white;
+    border: none;
+    border-radius: 2rem;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 1rem;
+    left: 1.7rem;
+    width: 2rem;
+    height: 2rem;
+    background: url('../../shared/assets/icons/search.svg');
+  }
+
+  &__settings {
+    width: 4rem;
+    height: 4rem;
+    background: url('../../shared/assets/icons/filter.svg') no-repeat center;
+    background-color: $color-accent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}

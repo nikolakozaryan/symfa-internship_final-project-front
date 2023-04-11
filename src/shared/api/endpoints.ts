@@ -5,4 +5,9 @@ export const ENDPOINTS = {
         REFRESH: '/auth/refresh',
         LOGOUT: '/auth/logout',
     },
+    USER: '/user',
+    DISHES: {
+        ALL: '/dishes/',
+        FAV: '/dishes/fav',
+    },
 };

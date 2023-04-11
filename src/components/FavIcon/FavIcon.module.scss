@@ -1,0 +1,14 @@
+.icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: transparent;
+
+  &__inner {
+    transition: .5s;
+    fill: transparent;
+
+    &_active {
+      fill: #D7443E
+    }
+  }
+}

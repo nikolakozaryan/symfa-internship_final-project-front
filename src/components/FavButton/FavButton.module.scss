@@ -1,0 +1,16 @@
+@import '../../app/styles';
+
+.fav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: $color-accent-transparent-light;
+  border: none;
+  border-radius: 1rem 0 0;
+  cursor: pointer;
+}

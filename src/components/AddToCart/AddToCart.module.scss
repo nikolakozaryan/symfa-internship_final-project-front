@@ -1,0 +1,13 @@
+@import '../../app/styles';
+
+.button {
+  @include font(.8rem, 1rem, 600);
+
+  width: 10rem;
+  height: 2.4rem;
+  background: $color-accent;
+  border: none;
+  border-radius: 0 1.5rem;
+  box-shadow: 0 .4rem .5rem #0000000D;
+  cursor: pointer;
+}

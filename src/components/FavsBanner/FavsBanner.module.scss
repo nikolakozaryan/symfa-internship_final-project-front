@@ -1,0 +1,42 @@
+@import '../../app/styles';
+
+.banner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 28.9rem;
+  min-height: 14.5rem;
+  margin: 0 auto 2.1rem;
+  padding: 1.9rem 2.3rem;
+  background: #FFE3C0;
+  border-radius: 2.5rem;
+
+  &__info {
+    height: 100%;
+
+    &_title {
+      @include font(1.7rem, 2.6rem, 700);
+
+      margin-top: .2rem;
+    }
+
+    &_date {
+      @include font(1.1rem, 1.1rem, 400, #616F80);
+
+      display: block;
+      margin-bottom: 2.3rem;
+    }
+  }
+
+  &__button {
+    @include font(.9rem, .9rem, 700);
+
+    width: 9rem;
+    height: 3rem;
+    background: $color-accent;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 .4rem .5rem #0000000D;
+    cursor: pointer;
+  }
+}

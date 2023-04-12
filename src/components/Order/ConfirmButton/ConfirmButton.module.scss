@@ -1,0 +1,17 @@
+@import '../../../app/styles';
+
+.submit {
+  @include font(1.6rem, 2.8rem, 600);
+
+  height: 5rem;
+  text-transform: uppercase;
+  background: $color-accent;
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 .4rem 1rem #0000001A;
+  transition: .3s;
+
+  &:active {
+    box-shadow: none;
+  }
+}

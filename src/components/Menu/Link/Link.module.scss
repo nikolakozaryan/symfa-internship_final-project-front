@@ -1,0 +1,40 @@
+@import '../../../app/styles';
+
+.link-active>svg {
+  fill: $color-accent
+}
+
+.order {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  background-color: $color-accent;
+  border: .2rem solid $color-bg-item-light;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1rem $color-bg-light;
+  transform: translateY(-50%);
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 2.3rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    box-shadow: 0 -1rem 0 0 $color-bg-light;
+    content: '';
+  }
+
+  &::before {
+    left: -2.8rem;
+    border-top-right-radius: 2rem;
+  }
+
+  &::after {
+    right: -2.8rem;
+    border-top-left-radius: 2rem;
+  }
+}

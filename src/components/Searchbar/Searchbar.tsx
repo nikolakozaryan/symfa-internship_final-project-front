@@ -1,8 +1,6 @@
-import {
-    ChangeEvent, FC, FormEvent, useEffect, useState,
-} from 'react';
+import { ChangeEvent, FC, FormEvent, useEffect, useState } from 'react';
 
-import type { MyProps } from '../MenuHeader/types';
+import type { MyProps } from '../Menu/Header/types';
 import { useDebounce } from '../../shared/hooks/useDebouce';
 import { useAppDispatch } from '../../store/services/appDispatch';
 import { setFavSearch } from '../../store/slices/fav.slice';
@@ -10,7 +8,7 @@ import { setSearch } from '../../store/slices/menu.slice';
 
 import styles from './Searchbar.module.scss';
 
-export const Searchbar:FC<MyProps> = ({ pageType }) => {
+export const Searchbar: FC<MyProps> = ({ pageType }) => {
     const [query, setQuery] = useState('');
     const dispatch = useAppDispatch();
     const searchQuery = useDebounce(query);

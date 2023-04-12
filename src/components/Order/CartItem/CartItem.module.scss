@@ -1,0 +1,51 @@
+@import '../../../app/styles';
+
+.item {
+  position: relative;
+  display: flex;
+  gap: 1.4rem;
+  padding: 1.5rem;
+  background: $color-bg-item-light;
+  border-radius: 2rem;
+
+  &__image {
+    flex-shrink: 0;
+    width: 7rem;
+    height: 7rem;
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: (0 .4rem 1rem #00000026);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.currency {
+  @include font(1.4rem, 2.1rem, 300, $color-currency);
+}
+
+.info {
+  &__title {
+    @include font(1.6rem, 2.4rem, 700);
+  }
+
+  &__name {
+    @include font(1rem, 1rem, 400, #616F80);
+  }
+
+  &__price {
+    @include font(2rem, 3rem, 700);
+  }
+}
+
+.picker {
+  position: absolute;
+  right: .8rem;
+  bottom: .7rem;
+  width: 10.5rem;
+  height: 3.5rem;
+}

@@ -1,4 +1,4 @@
-import type { SignInFormInputs } from '../../components/Signin/types';
+import type { SignInFormInputs } from '../../components/Auth/Signin/types';
 
 export type ReqSigninData = SignInFormInputs;
 export type ResSigninData = {

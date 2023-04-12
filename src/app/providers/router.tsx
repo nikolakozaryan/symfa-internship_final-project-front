@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
-import { Signin } from '../../components/Signin/Signin';
-import { Signup } from '../../components/Signup/Signup';
+import { Signin } from '../../components/Auth/Signin/Signin';
+import { Signup } from '../../components/Auth/Signup/Signup';
 // eslint-disable-next-line object-curly-newline
 import { Auth, Favorite, FoodDetail, Home, Menu, Notifications, Orders, Profile } from '../../pages';
 import { App } from '../app';

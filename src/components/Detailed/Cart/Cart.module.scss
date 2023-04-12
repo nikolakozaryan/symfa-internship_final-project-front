@@ -1,0 +1,86 @@
+@import '../../../app/styles';
+
+.cart {
+  display: flex;
+  justify-content: space-between;
+
+  &__picker {
+    position: relative;
+    width: 12.9rem;
+    height: 4rem;
+
+    .input {
+      @include font(1.6rem, 2.4rem, 700);
+
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background: $color-accent-transparent-hard;
+      border: none;
+      border-radius: 2rem;
+    }
+
+    .button {
+      @include font(1.2rem, 1.2rem, 700);
+
+      position: absolute;
+      top: 50%;
+      width: 3rem;
+      height: 3rem;
+      background: $color-accent;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 .4rem 1rem #0000001A;
+      transform: translateY(-50%);
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        width: 1.2rem;
+        height: .2rem;
+        background: $color-font-main-light;
+        transform: translate(-50%, -50%);
+        content: '';
+      }
+
+      &_plus {
+        right: .5rem;
+
+        &::after {
+          width: .2rem;
+          height: 1.2rem;
+        }
+      }
+
+      &_minus {
+        left: .5rem
+      }
+    }
+  }
+}
+
+
+.add {
+  @include font(1.1rem, 2.8rem, 700);
+
+  width: 11.1rem;
+  height: 4rem;
+  text-transform: uppercase;
+  background: $color-accent;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 .4rem .5rem #0000000D;
+  cursor: pointer;
+  transition: .4s;
+
+
+  &:disabled {
+    filter: grayscale(1)
+  }
+
+  &:not(:disabled):hover {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../../app/styles';
+
+.details {
+  @include font(1.6rem, 2.4rem, 500);
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  .container {
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+  }
+}

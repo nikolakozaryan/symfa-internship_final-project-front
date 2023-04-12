@@ -4,3 +4,7 @@
   font-size: $size;
   line-height: $line-height;
 }
+
+@mixin base-shadow {
+  box-shadow: 0 .4rem 1.5rem #0000000D
+}

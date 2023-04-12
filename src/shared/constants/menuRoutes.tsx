@@ -1,6 +1,6 @@
 import {
     BagIcon, BellIcon, BookIcon, HomeIcon, ProfileIcon,
-} from '../../components/MenuNavIcons';
+} from '../../components/Menu/NavIcons';
 
 export enum MenuRoutes {
     Home = 'home',

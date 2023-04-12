@@ -1,3 +1,74 @@
-.default {
-  font-size: 3rem;
+@import '../../app/styles';
+
+.detailed {
+  display: flex;
+  flex-direction: column;
+  gap: 4.2rem;
+  height: 100%;
+  padding-left: 3.8rem;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &__container {
+      position: relative;
+      width: 31.7rem;
+      height: 29.6rem;
+      overflow: hidden;
+      border-radius: 0 0 0 4rem;
+      box-shadow: .4rem .4rem 1.5rem #0000001A;
+    }
+  }
+
+  &__info {
+    @include base-shadow;
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 2.2rem 2rem 3.2rem 2.8rem;
+    background: $color-bg-item-light;
+    border-radius: 4rem 0 0;
+  }
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: $color-accent-transparent-light;
+  border: none;
+  border-radius: 0 0 0 1.5rem;
+  cursor: pointer;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: $color-accent;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 70%;
+    height: .2rem;
+    background-color: $color-bg-item-light;
+    border-radius: .2rem;
+    transform: translateY(-50%);
+    transform-origin: center;
+    content: '';
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
 }

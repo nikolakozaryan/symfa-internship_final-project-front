@@ -1,0 +1,15 @@
+@import '../../../app/styles';
+
+.home {
+  &__heading {
+    @include font(2.4rem, 3.6rem, 700)
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.7rem;
+    padding-right: .6rem;
+  }
+}

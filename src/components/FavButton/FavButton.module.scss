@@ -12,5 +12,15 @@
   background-color: $color-accent-transparent-light;
   border: none;
   border-radius: 1rem 0 0;
+  transform-origin: right bottom;
   cursor: pointer;
+  transition: background-color .3s;
+
+  &_large {
+    transform: scale(calc(5 / 3));
+  }
+
+  &:hover {
+    background-color: $color-accent;
+  }
 }

@@ -1,0 +1,29 @@
+.icon {
+  display: block;
+  width: 1.8rem;
+  height: 1.8rem;
+
+  &__container {
+    width: 3rem;
+    height: 3rem;
+    padding: .6rem;
+    border-radius: 1rem;
+    box-shadow: 0 .4rem .5rem #0000000D;
+
+    &_star {
+      background-color: #FFF9DD;
+    }
+
+    &_time {
+      background-color: #E0DEE3;
+    }
+  }
+
+  &_star {
+    background: url('../../../shared/assets/icons/star.svg') no-repeat center;
+  }
+
+  &_time {
+    background: url('../../../shared/assets/icons/time.svg') no-repeat center;
+  }
+}

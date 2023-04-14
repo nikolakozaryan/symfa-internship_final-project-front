@@ -21,6 +21,7 @@ export interface IUserState extends IState {
 
 export interface ICartState extends IState {
     dishes: CartDish[];
+    secret: string;
 }
 
 export type CartDish = {

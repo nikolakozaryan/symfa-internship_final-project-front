@@ -7,31 +7,36 @@ import { useAppDispatch } from '../store/services/appDispatch';
 import { isTokenExpired } from '../utils/validateJwt';
 
 export const App = () => {
-    const { pathname } = useLocation();
+    const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const at = useAppSelector(state => state.auth.at);
     const rt = useAppSelector(state => state.auth.rt);
 
     useEffect(() => {
+        const regex = /^\/auth\/sign(in|up)/;
         const isAtExpired = isTokenExpired(at);
 
         if (isAtExpired) {
             const isRtExpired = isTokenExpired(rt);
 
             if (isRtExpired) {
-                if (pathname.match(/^\/menu/)) {
-                    navigate('/signin');
+                const isAuthPages = regex.test(location.pathname);
+
+                if (!isAuthPages) {
+                    navigate('/auth/signin');
                 }
             } else {
                 dispatch(refresh());
             }
         }
 
-        if (!isAtExpired && pathname.match(/^\/sign(in|up)/)) {
+        const test = !isAtExpired && (regex.test(location.pathname) || /^\/$/.test(location.pathname));
+
+        if (test) {
             navigate('menu/home');
         }
-    }, [pathname, at, navigate, rt, dispatch]);
+    }, [location, at, rt, dispatch, navigate]);
 
     return (
         <div className="app">

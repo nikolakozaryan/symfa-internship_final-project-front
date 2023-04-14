@@ -1,0 +1,90 @@
+@import '../../app/styles';
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+
+  &__button {
+    @include font(1.6rem, 2.8rem, 600);
+
+    width: 48%;
+    height: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    background: $color-accent;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 .4rem 1rem #0000001A;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      box-shadow: 0 .8rem 1rem #0000001A;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &_submit {
+      background: $color-accent;
+    }
+
+    &_back {
+      color: white;
+      background: #D7443E;
+
+      &:disabled {
+        box-shadow: none;
+        filter: grayscale(1);
+      }
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  border: .1rem solid $color-bg-light;
+  border-radius: 1rem;
+
+  &_cvc,
+  &_date {
+    width: 48%;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loader {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto;
+  border: .2rem solid white;
+  border-top-color: $color-font-main-light;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

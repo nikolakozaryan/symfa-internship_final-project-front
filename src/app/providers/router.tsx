@@ -1,10 +1,27 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
 import { Signin } from '../../components/Auth/Signin/Signin';
 import { Signup } from '../../components/Auth/Signup/Signup';
-// eslint-disable-next-line object-curly-newline
-import { Auth, Favorite, FoodDetail, Home, Menu, Notifications, Orders, Profile } from '../../pages';
+import {
+    Auth,
+    CheckoutForm,
+    FailedPayment,
+    Favorite,
+    FoodDetail,
+    Home,
+    Menu,
+    Notifications,
+    Orders,
+    Profile,
+    SuccessPayment,
+} from '../../pages';
 import { App } from '../app';
+
+const stripePromise = loadStripe(
+    'pk_test_51MsSd9EGkzaIt3SV9g5PvKMFGrYPwzlwhSHnPUGK78ZolRe2lCtZQyLlHRVgR319lBehN6jfND0r7wze5qhMgDUl00aY2y84wV',
+);
 
 export const router = createBrowserRouter([
     {
@@ -12,10 +29,9 @@ export const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: '/',
+                path: 'auth',
                 element: <Auth />,
                 children: [
-                    { index: true, element: <Navigate to="signin" /> },
                     {
                         path: 'signin',
                         element: <Signin />,
@@ -56,6 +72,22 @@ export const router = createBrowserRouter([
             {
                 path: 'menu/order',
                 element: <Orders />,
+            },
+            {
+                path: 'checkout',
+                element: (
+                    <Elements stripe={stripePromise}>
+                        <CheckoutForm />
+                    </Elements>
+                ),
+            },
+            {
+                path: 'success',
+                element: <SuccessPayment />,
+            },
+            {
+                path: 'failed',
+                element: <FailedPayment />,
             },
         ],
     },

@@ -8,6 +8,7 @@ type ChangeAmount = {
 };
 
 const initialState: ICartState = {
+    secret: '',
     dishes: [],
     isLoading: false,
     errorMessage: '',
@@ -17,6 +18,12 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
+        setSecret: (state, action: PayloadAction<string>) => {
+            state.secret = action.payload;
+        },
+        resetSecret: state => {
+            state.secret = '';
+        },
         addToCart: (state, action: PayloadAction<CartDish>) => {
             state.dishes = state.dishes.concat(action.payload);
         },
@@ -41,4 +48,4 @@ export const cartSlice = createSlice({
     },
 });
 
-export const { addToCart, removeFromCart, resetCart, changeAmount } = cartSlice.actions;
+export const { addToCart, removeFromCart, resetCart, changeAmount, setSecret, resetSecret } = cartSlice.actions;

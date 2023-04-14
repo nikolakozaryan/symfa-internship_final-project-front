@@ -9,9 +9,15 @@
   border: none;
   border-radius: 1.5rem;
   box-shadow: 0 .4rem 1rem #0000001A;
+  cursor: pointer;
   transition: .3s;
 
   &:active {
     box-shadow: none;
+  }
+
+  &:disabled {
+    box-shadow: none;
+    filter: grayscale(1);
   }
 }

@@ -4,13 +4,14 @@ import type { CartDish } from '../../../store/slices/types';
 import type { MyProps } from './types';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { useAppDispatch } from '../../../store/services/appDispatch';
-import { addToCart, changeAmount } from '../../../store/slices/cart.slice';
+import { addToCart, changeAmount, resetSecret } from '../../../store/slices/cart.slice';
 
 import styles from './Cart.module.scss';
 
 export const Cart: FC<MyProps> = ({ dish }) => {
     const dispatch = useAppDispatch();
     const cartDishes = useAppSelector(state => state.cart.dishes);
+    const secret = useAppSelector(state => state.cart.secret);
     const cartDish = cartDishes.find(item => item.dish.id === dish.id);
     const inCart = !!cartDish;
     const [amount, setAmount] = useState(1);
@@ -22,6 +23,8 @@ export const Cart: FC<MyProps> = ({ dish }) => {
     };
 
     const handleClick = (diff: boolean) => {
+        if (secret) dispatch(resetSecret());
+
         if (inCart) {
             dispatch(changeAmount({ id: dish.id, newAmount: cartDish.amount + (diff ? 1 : -1) }));
         } else {

@@ -12,7 +12,7 @@ export const Header = () => {
                 className={styles.header__button}
                 type="button"
                 onClick={() => {
-                    navigate(-1);
+                    navigate('../menu/home');
                 }}
             />
         </header>

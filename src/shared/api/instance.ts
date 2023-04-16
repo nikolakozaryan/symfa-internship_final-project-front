@@ -10,7 +10,7 @@ type ServerErrorResponse = {
     statusCode: number;
 };
 
-const urlsSkipAuth = [ENDPOINTS.AUTH.LOGIN, ENDPOINTS.AUTH.REFRESH, ENDPOINTS.AUTH.REGISTER];
+const urlsSkipAuth = [ENDPOINTS.AUTH.LOGIN, ENDPOINTS.AUTH.REFRESH, ENDPOINTS.AUTH.REGISTER, ENDPOINTS.AUTH.GOOGLE];
 
 axiosInstance.interceptors.request.use(async conf => {
     const confCopy = { ...conf };

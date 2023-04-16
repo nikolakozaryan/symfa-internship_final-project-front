@@ -9,3 +9,9 @@
   width: 24.8rem;
   height: 4.5rem;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

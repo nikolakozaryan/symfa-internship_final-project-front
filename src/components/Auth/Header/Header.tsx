@@ -21,7 +21,7 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <Error error={authError} />
-            <img className={styles.header__logo} src="./assets/logo.png" alt="App logo" />
+            <div className={styles.header__logo} />
             <h1 className={styles.header__title}>Corner Food</h1>
             <p className={styles.header__title_sub}>Delivery App</p>
             <Navigation />

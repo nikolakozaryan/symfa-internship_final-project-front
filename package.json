@@ -19,6 +19,7 @@
     "prettier:fix": "npm run prettier -- --write"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.10.0",
     "@reduxjs/toolkit": "^1.9.3",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.52.1",

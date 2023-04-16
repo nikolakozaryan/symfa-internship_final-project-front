@@ -4,6 +4,7 @@ export const ENDPOINTS = {
         REGISTER: '/auth/signup',
         REFRESH: '/auth/refresh',
         LOGOUT: '/auth/logout',
+        GOOGLE: '/auth/google',
     },
     USER: '/user',
     DISHES: {

@@ -9,9 +9,15 @@ export const Avatar = () => {
     const username = useAppSelector(state => state.user.username);
     const avatar = useAppSelector(state => state.user.avatar);
 
+    const isAvatarPathRelative = (avatarLink: string) => avatarLink.startsWith('/');
+
     return (
         <Link to="../profile">
-            <img className={styles.avatar} src={API_URL + avatar} alt={`${username}-avatar`} />
+            <img
+                className={styles.avatar}
+                src={isAvatarPathRelative(avatar) ? API_URL + avatar : avatar}
+                alt={`${username}-avatar`}
+            />
         </Link>
     );
 };

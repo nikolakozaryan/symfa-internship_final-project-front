@@ -5,3 +5,5 @@ export type ResSigninData = {
     accessToken: string;
     refreshToken: string;
 };
+
+export type GoogleSigninData = { token: string };

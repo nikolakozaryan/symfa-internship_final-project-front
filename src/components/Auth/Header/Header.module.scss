@@ -12,7 +12,10 @@
   border-radius: 0 0 4rem 4rem;
 
   &__logo {
-    margin-bottom: 1.6rem
+    width: 12.7rem;
+    height: 12.7rem;
+    margin-bottom: 1.6rem;
+    background: url('../../../shared/assets/images/logo.png') no-repeat center
   }
 
   &__title {

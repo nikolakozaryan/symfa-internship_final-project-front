@@ -2,7 +2,11 @@
 
 .home {
   &__heading {
-    @include font(2.4rem, 3.6rem, 700)
+    @include font(2.4rem, 3.6rem, 700);
+
+    &_dark {
+      color: $color-accent
+    }
   }
 
   &__header {
@@ -11,5 +15,10 @@
     justify-content: space-between;
     margin-bottom: 2.7rem;
     padding-right: .6rem;
+  }
+
+  &__avatar {
+    width: 5.4rem;
+    height: 5.4rem;
   }
 }

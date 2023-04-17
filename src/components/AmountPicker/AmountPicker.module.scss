@@ -9,6 +9,16 @@
   background: $color-accent-transparent-hard;
   border: none;
   border-radius: 2rem;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  &_dark {
+    color: #D1D1D1
+  }
 }
 
 .button {

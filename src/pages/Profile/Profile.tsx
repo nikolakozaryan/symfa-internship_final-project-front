@@ -1,3 +1,14 @@
+import { Outlet } from 'react-router-dom';
+
+import { Header } from '../../components/Profile/Header';
+
 import styles from './Profile.module.scss';
 
-export const Profile = () => <div className={styles.default}>Profile</div>;
+export const Profile = () => (
+    <section className={styles.profile}>
+        <Header />
+        <div className={styles.container}>
+            <Outlet />
+        </div>
+    </section>
+);

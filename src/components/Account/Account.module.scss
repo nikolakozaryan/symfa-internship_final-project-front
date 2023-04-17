@@ -1,0 +1,34 @@
+@import '.././../app/styles';
+
+.account {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  height: 100%;
+  padding-bottom: 2rem;
+
+  &__option {
+    @include font(1.8rem, 2.4rem, 600);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_dark {
+      color: #D1D1D1
+    }
+  }
+}
+
+.logout {
+  @include font(1.8rem, 2.4rem, 600, $color-bg-item-light);
+  @include base-shadow;
+
+  padding: 1rem;
+  text-transform: uppercase;
+  background: #D7443E;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}

@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { MenuNavigation } from '../../components/Menu/Navigation';
-import { MenuLayout } from '../../layouts/MenuLayout/MenuLayout';
 import { getUser } from '../../shared/api/actions/user';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
@@ -10,21 +9,20 @@ import { useAppDispatch } from '../../store/services/appDispatch';
 export const Menu = () => {
     const dispatch = useAppDispatch();
     const userId = useAppSelector(state => state.user.id);
+    const { at, rt } = useAppSelector(state => state.auth);
 
     useEffect(() => {
-        if (!userId) {
+        if (!userId && at && rt) {
             dispatch(getUser());
         }
-    }, [dispatch, userId]);
+    }, [at, dispatch, rt, userId]);
 
     return (
-        <MenuLayout>
-            <>
-                <Outlet />
-                <footer>
-                    <MenuNavigation />
-                </footer>
-            </>
-        </MenuLayout>
+        <>
+            <Outlet />
+            <footer>
+                <MenuNavigation />
+            </footer>
+        </>
     );
 };

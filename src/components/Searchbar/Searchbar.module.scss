@@ -18,12 +18,21 @@
     border: none;
     border-radius: 2rem;
 
+    &::placeholder {
+      color: #616F80;
+    }
+
     &::-webkit-search-cancel-button {
       display: none;
     }
 
     &:focus {
       outline: none;
+    }
+
+    &_dark {
+      color: #D1D1D1;
+      background: $color-bg-item-dark
     }
   }
 
@@ -34,6 +43,10 @@
     width: 2rem;
     height: 2rem;
     background: url('../../shared/assets/icons/search.svg');
+
+    &_dark {
+      background: url('../../shared/assets/icons/search-dark.svg');
+    }
   }
 
   &__settings {

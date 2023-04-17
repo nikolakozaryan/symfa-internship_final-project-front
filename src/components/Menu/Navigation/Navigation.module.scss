@@ -12,4 +12,9 @@
   height: 5rem;
   padding: 0 3.6rem;
   background: $color-bg-item-light;
+  transition: .4s;
+
+  &_dark {
+    background: $color-bg-item-dark;
+  }
 }

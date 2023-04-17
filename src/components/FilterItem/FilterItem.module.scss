@@ -11,9 +11,15 @@
   border-radius: 2rem;
   box-shadow: 0 .4rem .5rem #00000003;
   cursor: pointer;
-  transition: .3s;
+  transition: .4s;
+
+  &_dark {
+    color: #D1D1D1;
+    background: $color-bg-item-dark;
+  }
 
   &_active {
+    color: $color-font-main-light;
     background: $color-accent;
   }
 }

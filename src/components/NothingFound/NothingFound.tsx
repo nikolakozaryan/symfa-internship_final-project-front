@@ -1,7 +1,9 @@
+import { useAppSelector } from '../../store/selectors/appSelector';
+
 import styles from './NothingFound.module.scss';
 
-export const NothingFound = () => (
-    <div className={styles.empty}>
-        Found nothing
-    </div>
-);
+export const NothingFound = () => {
+    const isDark = useAppSelector(state => state.theme.dark);
+
+    return <div className={`${styles.empty} ${isDark ? styles.empty_dark : ''}`}>Found nothing</div>;
+};

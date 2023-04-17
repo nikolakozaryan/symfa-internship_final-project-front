@@ -14,11 +14,7 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        resetAuthState: () => {
-            localStorage.clear();
-
-            return initialState;
-        },
+        resetAuthState: () => initialState,
         resetError: state => {
             state.errorMessage = '';
         },

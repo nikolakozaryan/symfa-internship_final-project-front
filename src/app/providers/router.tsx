@@ -2,8 +2,11 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
+import { Account } from '../../components/Account';
 import { Signin } from '../../components/Auth/Signin/Signin';
 import { Signup } from '../../components/Auth/Signup/Signup';
+import { History } from '../../components/History';
+import { Payments } from '../../components/Payments';
 import {
     Auth,
     CheckoutForm,
@@ -62,6 +65,21 @@ export const router = createBrowserRouter([
                     {
                         path: 'profile',
                         element: <Profile />,
+                        children: [
+                            { index: true, element: <Navigate to="payment" /> },
+                            {
+                                path: 'payment',
+                                element: <Payments />,
+                            },
+                            {
+                                path: 'account',
+                                element: <Account />,
+                            },
+                            {
+                                path: 'history',
+                                element: <History />,
+                            },
+                        ],
                     },
                 ],
             },

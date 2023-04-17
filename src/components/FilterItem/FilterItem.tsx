@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import type { MyProps } from './types';
+import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
 import { setFavTaste } from '../../store/slices/fav.slice';
 import { setType } from '../../store/slices/menu.slice';
@@ -8,6 +9,7 @@ import { setType } from '../../store/slices/menu.slice';
 import styles from './FilterItem.module.scss';
 
 export const FilterItem: FC<MyProps> = ({ type, taste, active }) => {
+    const isDark = useAppSelector(state => state.theme.dark);
     const dispatch = useAppDispatch();
 
     const handleCLick = () => {
@@ -25,7 +27,7 @@ export const FilterItem: FC<MyProps> = ({ type, taste, active }) => {
             <button
                 onClick={handleCLick}
                 type="button"
-                className={`${styles.item} ${active ? styles.item_active : ''}`}
+                className={`${styles.item} ${active ? styles.item_active : ''} ${isDark ? styles.item_dark : ''}`}
             >
                 {type || taste}
             </button>

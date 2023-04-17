@@ -4,11 +4,13 @@ import { useFormContext } from 'react-hook-form';
 import type { MyProps } from './types';
 import { getValidationOptions } from '../../../shared/config/formValidationConfig';
 import { AUTH_INPUTS, RegisterType } from '../../../shared/constants/authInputs';
+import { useAppSelector } from '../../../store/selectors/appSelector';
 import { VisibilityToggler } from '../../VisibilityToggler';
 
 import styles from './Input.module.scss';
 
 export const Input: FC<MyProps> = ({ inputType, form }) => {
+    const isDark = useAppSelector(state => state.theme.dark);
     const methods = useFormContext();
     const {
         formState: { errors },
@@ -26,14 +28,14 @@ export const Input: FC<MyProps> = ({ inputType, form }) => {
 
     return (
         <label className={styles.input__label_wrapper} htmlFor={inputType}>
-            <span className={styles.input__label}>{label}</span>
+            <span className={`${styles.input__label} ${isDark ? styles.input__label_dark : ''}`}>{label}</span>
             <input
                 {...methods.register(
                     registerName,
                     form === 'signup' ? getValidationOptions(methods, registerName as RegisterType) : {},
                 )}
                 id={inputType}
-                className={styles.input}
+                className={`${styles.input} ${isDark ? styles.input_dark : ''}`}
                 type={dynamicType}
                 required
             />

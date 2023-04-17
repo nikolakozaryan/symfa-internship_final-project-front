@@ -8,6 +8,10 @@
   &_name,
   &_price {
     @include font(2.4rem, 3.6rem, 700);
+
+    &_dark {
+      color: #D1D1D1
+    }
   }
 
   &_productname {

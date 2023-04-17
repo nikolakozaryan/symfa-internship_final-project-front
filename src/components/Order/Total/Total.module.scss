@@ -34,4 +34,15 @@
       color: #FF6347
     }
   }
+
+  &_dark {
+    background: $color-bg-item-dark;
+
+    .receipt {
+      &__details,
+      &__total {
+        color: #D1D1D1
+      }
+    }
+  }
 }

@@ -10,6 +10,7 @@ import styles from './AmountPicker.module.scss';
 export const AmountPicker: FC<MyProps> = ({ amount, dishId }) => {
     const dispatch = useAppDispatch();
     const secret = useAppSelector(state => state.cart.secret);
+    const isDark = useAppSelector(state => state.theme.dark);
 
     const handleClick = (add: boolean) => {
         if (secret) dispatch(resetSecret());
@@ -29,7 +30,12 @@ export const AmountPicker: FC<MyProps> = ({ amount, dishId }) => {
                 type="button"
                 onClick={() => handleClick(false)}
             />
-            <input disabled className={styles.input} value={amount} type="number" />
+            <input
+                disabled
+                className={`${styles.input} ${isDark ? styles.input_dark : ''}`}
+                value={amount}
+                type="number"
+            />
         </>
     );
 };

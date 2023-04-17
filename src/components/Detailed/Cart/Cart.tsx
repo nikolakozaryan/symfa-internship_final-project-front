@@ -51,7 +51,7 @@ export const Cart: FC<MyProps> = ({ dish }) => {
                 />
                 <input
                     disabled
-                    className={styles.input}
+                    className={`${styles.input} ${styles.input_dark}`}
                     value={inCart ? (cartDishes.find(item => item.dish.id === dish.id) as CartDish).amount : amount}
                     type="number"
                 />

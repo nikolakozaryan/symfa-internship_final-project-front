@@ -44,3 +44,7 @@ export interface IMenuState extends IDishesState {
 export interface IFavsState extends IDishesState {
     taste: TasteType;
 }
+
+export interface IThemeState {
+    dark: boolean;
+}

@@ -1,3 +1,11 @@
-.default {
-  font-size: 3rem;
+.profile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 7.5rem;
+}
+
+.container {
+  flex: 1;
+  padding: 3rem 1.9rem 0 2.9rem
 }

@@ -31,6 +31,10 @@
     padding: 2.2rem 2rem 3.2rem 2.8rem;
     background: $color-bg-item-light;
     border-radius: 4rem 0 0;
+
+    &_dark {
+      background: $color-bg-item-dark;
+    }
   }
 }
 
@@ -44,7 +48,7 @@
   border: none;
   border-radius: 0 0 0 1.5rem;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: background-color .4s;
 
   &:hover {
     background-color: $color-accent;

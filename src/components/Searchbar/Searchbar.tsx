@@ -2,6 +2,7 @@ import { ChangeEvent, FC, FormEvent, useEffect, useState } from 'react';
 
 import type { MyProps } from '../Menu/Header/types';
 import { useDebounce } from '../../shared/hooks/useDebouce';
+import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
 import { setFavSearch } from '../../store/slices/fav.slice';
 import { setSearch } from '../../store/slices/menu.slice';
@@ -9,6 +10,7 @@ import { setSearch } from '../../store/slices/menu.slice';
 import styles from './Searchbar.module.scss';
 
 export const Searchbar: FC<MyProps> = ({ pageType }) => {
+    const isDark = useAppSelector(state => state.theme.dark);
     const [query, setQuery] = useState('');
     const dispatch = useAppDispatch();
     const searchQuery = useDebounce(query);
@@ -27,9 +29,9 @@ export const Searchbar: FC<MyProps> = ({ pageType }) => {
 
     return (
         <form className={styles.searchbar} onSubmit={handleSubmit}>
-            <span className={styles.searchbar__icon} />
+            <span className={`${styles.searchbar__icon} ${isDark ? styles.searchbar__icon_dark : ''}`} />
             <input
-                className={styles.searchbar__input}
+                className={`${styles.searchbar__input} ${isDark ? styles.searchbar__input_dark : ''}`}
                 value={query}
                 onChange={handleChange}
                 type="search"

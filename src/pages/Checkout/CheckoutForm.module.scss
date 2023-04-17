@@ -7,8 +7,12 @@
   width: 90%;
   margin: 0 auto;
   padding: 1.5rem;
-  background-color: white;
+  background-color: $color-bg-item-light;
   border-radius: 1rem;
+
+  &_dark {
+    background-color: $color-bg-item-dark;
+  }
 
   &__button {
     @include font(1.6rem, 2.8rem, 600);
@@ -23,7 +27,7 @@
     border-radius: 1rem;
     box-shadow: 0 .4rem 1rem #0000001A;
     cursor: pointer;
-    transition: .3s;
+    transition: .4s;
 
     &:hover {
       box-shadow: 0 .8rem 1rem #0000001A;
@@ -59,6 +63,10 @@
   &_date {
     width: 48%;
   }
+
+  &_dark {
+    border-color: $color-bg-dark;
+  }
 }
 
 .container {
@@ -66,25 +74,4 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-}
-
-.loader {
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  margin: 0 auto;
-  border: .2rem solid white;
-  border-top-color: $color-font-main-light;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }

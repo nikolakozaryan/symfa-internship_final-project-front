@@ -17,7 +17,7 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        resetAuthState: () => {
+        resetUserState: () => {
             localStorage.clear();
 
             return initialState;
@@ -64,4 +64,4 @@ export const userSlice = createSlice({
     },
 });
 
-export const { resetAuthState, resetError } = userSlice.actions;
+export const { resetUserState, resetError } = userSlice.actions;

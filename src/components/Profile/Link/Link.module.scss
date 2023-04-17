@@ -1,0 +1,21 @@
+@import '../../../app/styles/';
+
+.link {
+  @include font(1.2rem, 1.8rem, 400, $color-font-button);
+
+  display: block;
+  width: 9rem;
+  padding: 1.4rem 0;
+  text-align: center;
+  text-transform: capitalize;
+  border-bottom: .2rem solid transparent;
+  transition: .4s;
+
+  &_dark {
+    color: $color-bg-item-light;
+  }
+
+  &_active {
+    border-color: $color-accent;
+  }
+}

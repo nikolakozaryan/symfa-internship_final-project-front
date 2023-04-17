@@ -16,6 +16,7 @@
   border-radius: 50%;
   box-shadow: 0 0 0 1rem $color-bg-light;
   transform: translateY(-50%);
+  transition: .4s;
 
   &::before,
   &::after {
@@ -25,6 +26,7 @@
     height: 2rem;
     background: transparent;
     box-shadow: 0 -1rem 0 0 $color-bg-light;
+    transition: .4s;
     content: '';
   }
 
@@ -36,5 +38,15 @@
   &::after {
     right: -2.8rem;
     border-top-left-radius: 2rem;
+  }
+
+  &_dark {
+    border-color: #2F3045;
+    box-shadow: 0 0 0 1rem $color-bg-dark;
+
+    &::before,
+    &::after {
+      box-shadow: 0 -1rem 0 0 $color-bg-dark;
+    }
   }
 }

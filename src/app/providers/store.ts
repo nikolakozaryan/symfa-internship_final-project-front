@@ -4,6 +4,7 @@ import { authSlice } from '../../store/slices/auth.slice';
 import { cartSlice } from '../../store/slices/cart.slice';
 import { favSlice } from '../../store/slices/fav.slice';
 import { menuSlice } from '../../store/slices/menu.slice';
+import { themeSlice } from '../../store/slices/theme.slice';
 import { userSlice } from '../../store/slices/user.slice';
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
         menu: menuSlice.reducer,
         fav: favSlice.reducer,
         cart: cartSlice.reducer,
+        theme: themeSlice.reducer,
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware({ serializableCheck: false }),
 });

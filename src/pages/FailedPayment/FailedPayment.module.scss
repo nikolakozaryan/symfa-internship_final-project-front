@@ -20,6 +20,10 @@
   @include font(2rem, 2.7rem, 600);
 
   margin-bottom: 4rem;
+
+  &_dark {
+    color: #D1D1D1
+  }
 }
 
 .link {

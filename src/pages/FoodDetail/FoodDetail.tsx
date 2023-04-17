@@ -7,6 +7,7 @@ import { Details } from '../../components/Detailed/Details';
 import { Header } from '../../components/Detailed/Header';
 import { FavButton } from '../../components/FavButton';
 import { useCurrentDish } from '../../shared/hooks/useCurrentDish';
+import { useAppSelector } from '../../store/selectors/appSelector';
 
 import styles from './FoodDetail.module.scss';
 
@@ -15,6 +16,7 @@ export const FoodDetail = () => {
     const { pathname } = useLocation();
     const dishId = pathname.split('/').at(-1) as string;
     const currentDish = useCurrentDish(dishId);
+    const isDark = useAppSelector(state => state.theme.dark);
 
     return (
         <div className={styles.detailed}>
@@ -30,7 +32,7 @@ export const FoodDetail = () => {
                 />
             </div>
 
-            <div className={styles.detailed__info}>
+            <div className={`${styles.detailed__info} ${isDark ? styles.detailed__info_dark : ''}`}>
                 <Header currentDish={currentDish} />
                 <Details time={currentDish?.prepareTime as number} rating={currentDish?.rating as number} />
                 <About description={currentDish?.description as string} />

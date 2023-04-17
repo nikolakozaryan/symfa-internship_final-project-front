@@ -1,0 +1,41 @@
+@import '../../app/styles';
+
+.button {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  background: $color-accent;
+  border: .2rem solid $color-bg-item-light;
+  border-radius: 50%;
+  box-shadow: 0 .4rem 1rem #0000001A;
+  cursor: pointer;
+
+  &:active {
+    outline: none;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: .2rem;
+    background: $color-font-main-light;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    content: '';
+  }
+
+  &::before {
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &_dark {
+    border-color: $color-bg-item-dark;
+  }
+}

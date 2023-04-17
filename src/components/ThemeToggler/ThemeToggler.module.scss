@@ -1,0 +1,40 @@
+@import '../../app/styles';
+
+.toggler {
+  display: flex;
+  align-items: center;
+  width: 5rem;
+  height: 3rem;
+  padding: 0 .5rem;
+  background: $color-accent;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+
+  &__marker {
+    width: 2rem;
+    height: 2rem;
+    background: $color-bg-item-light;
+    border-radius: 50%;
+    transition: .4s;
+  }
+
+  &__helper {
+    flex: 0;
+    transition: .4s;
+  }
+
+  &_active {
+    .toggler {
+      &__marker {
+        background: $color-bg-item-dark;
+      }
+
+      &__helper {
+        flex: 1;
+      }
+    }
+  }
+
+
+}

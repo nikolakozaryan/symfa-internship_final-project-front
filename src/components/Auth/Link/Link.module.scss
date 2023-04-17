@@ -9,7 +9,11 @@
   text-align: center;
   text-transform: capitalize;
   border-bottom: .2rem solid transparent;
-  transition: .5s;
+  transition: .4s;
+
+  &_dark {
+    color: $color-accent;
+  }
 
   &__active {
     border-color: $color-accent;

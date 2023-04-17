@@ -1,0 +1,26 @@
+@import '../../../app/styles';
+
+.header {
+  width: 100%;
+  padding: 2.9rem 2.3rem 0;
+  background: $color-bg-item-light;
+  border-radius: 0 0 4rem 4rem;
+  box-shadow: 0 .4rem 1.5rem #0000000D;
+  transition: .4s;
+
+  &__heading {
+    @include font(2.4rem, 3.6rem, 700);
+
+    margin-bottom: 4.2rem;
+  }
+
+  &_dark {
+    background: $color-bg-item-dark;
+
+    .header {
+      &__heading {
+        color: #D1D1D1
+      }
+    }
+  }
+}

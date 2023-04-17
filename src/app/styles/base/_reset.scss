@@ -32,4 +32,9 @@ html {
   height: 76.4rem;
   overflow: hidden;
   background: $color-bg-light;
+  transition: .4s;
+
+  &_active {
+    background: $color-bg-dark;
+  }
 }

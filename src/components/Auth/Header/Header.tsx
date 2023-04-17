@@ -10,6 +10,7 @@ import { Navigation } from '../Navigation';
 import styles from './Header.module.scss';
 
 export const Header = () => {
+    const isDark = useAppSelector(state => state.theme.dark);
     const dispatch = useAppDispatch();
     const authError = useAppSelector(state => state.auth.errorMessage);
     const location = useLocation();
@@ -19,7 +20,7 @@ export const Header = () => {
     }, [dispatch, location]);
 
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${isDark ? styles.header_dark : ''}`}>
             <Error error={authError} />
             <div className={styles.header__logo} />
             <h1 className={styles.header__title}>Corner Food</h1>

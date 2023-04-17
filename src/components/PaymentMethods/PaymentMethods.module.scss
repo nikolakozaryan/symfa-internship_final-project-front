@@ -1,0 +1,17 @@
+@import '../../app/styles';
+
+.methods {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+  width: 24rem;
+  height: 15rem;
+  padding: 2.4rem 2.6rem 2.6rem 2.2rem;
+  background: $color-bg-item-light;
+  border-radius: 2rem;
+  box-shadow: 0 .4rem 1.5rem #0000000D;
+
+  &_dark {
+    background: $color-bg-item-dark;
+  }
+}

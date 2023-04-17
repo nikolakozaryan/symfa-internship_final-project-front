@@ -8,6 +8,7 @@ import type {
 } from '@stripe/stripe-js';
 import { CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
+import { Loader } from '../../components/Loader';
 import { createOrder, getSecret } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
@@ -15,9 +16,8 @@ import { resetCart, setSecret } from '../../store/slices/cart.slice';
 
 import styles from './CheckoutForm.module.scss';
 
-const Loader = () => <span className={styles.loader} />;
-
 export const CheckoutForm = () => {
+    const isDark = useAppSelector(state => state.theme.dark);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useAppDispatch();
     const { username, email } = useAppSelector(state => state.user);
@@ -91,22 +91,29 @@ export const CheckoutForm = () => {
         base: {
             iconColor: '#FDC27A',
             fontSize: '20px',
+            color: isDark ? '#D1D1D1' : '#104E5B',
         },
     };
 
     return (
-        <div className={styles.container}>
-            <form className={styles.form} onSubmit={handleFormSubmit}>
+        <div className={`${styles.container} ${isDark ? styles.container_dark : ''}`}>
+            <form className={`${styles.form} ${isDark ? styles.form_dark : ''}`} onSubmit={handleFormSubmit}>
                 <CardNumberElement
-                    className={styles.input}
+                    className={`${styles.input} ${isDark ? styles.input_dark : ''}`}
                     options={{
-                        style: { ...style },
+                        style,
                         showIcon: true,
                         iconStyle: 'solid',
                     }}
                 />
-                <CardExpiryElement className={`${styles.input} ${styles.input_date}`} options={{ style }} />
-                <CardCvcElement className={`${styles.input} ${styles.input_cvc}`} options={{ style }} />
+                <CardExpiryElement
+                    className={`${styles.input} ${styles.input_date} ${isDark ? styles.input_dark : ''}`}
+                    options={{ style }}
+                />
+                <CardCvcElement
+                    className={`${styles.input} ${styles.input_cvc} ${isDark ? styles.input_dark : ''}`}
+                    options={{ style }}
+                />
                 <button
                     onClick={handleBack}
                     disabled={isLoading}

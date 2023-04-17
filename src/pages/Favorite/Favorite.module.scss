@@ -10,16 +10,25 @@
 
 .favs {
   &__heading {
-    @include font(1.8rem, 2.7rem, 700)
+    @include font(1.8rem, 2.7rem, 700);
+
+    &_dark {
+      color: #D1D1D1;
+    }
   }
 
-  &__button_show {
+  &__button {
     @include font(1rem, 1.5rem, 600);
 
     width: 8rem;
     height: 3rem;
+    background: transparent;
     border: .15rem solid #616F80;
     border-radius: 1rem;
     cursor: pointer;
+
+    &_dark {
+      color: #D1D1D1;
+    }
   }
 }

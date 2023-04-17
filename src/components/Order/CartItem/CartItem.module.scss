@@ -22,6 +22,10 @@
       height: 100%;
     }
   }
+
+  &_dark {
+    background: $color-bg-item-dark;
+  }
 }
 
 .currency {
@@ -39,6 +43,15 @@
 
   &__price {
     @include font(2rem, 3rem, 700);
+  }
+
+  &_dark {
+    .info {
+      &__title,
+      &__price {
+        color: #D1D1D1;
+      }
+    }
   }
 }
 

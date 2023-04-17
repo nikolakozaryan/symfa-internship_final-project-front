@@ -8,8 +8,9 @@
   flex-direction: column;
   align-items: center;
   padding-top: 3.2rem;
-  background-color: $color-bg-item-light;
+  background: $color-bg-item-light;
   border-radius: 0 0 4rem 4rem;
+  transition: .4s;
 
   &__logo {
     width: 12.7rem;
@@ -27,4 +28,20 @@
       margin: -.6rem 0 2.3rem;
     }
   }
+
+  &_dark {
+    background: $color-bg-item-dark;
+
+    .header {
+      &__title {
+        color: $color-font-main-dark;
+
+        &_sub {
+          color: #A09FA3;
+        }
+      }
+    }
+  }
+
+
 }

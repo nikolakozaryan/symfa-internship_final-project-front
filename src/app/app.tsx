@@ -6,7 +6,10 @@ import { useAppSelector } from '../store/selectors/appSelector';
 import { useAppDispatch } from '../store/services/appDispatch';
 import { isTokenExpired } from '../utils/validateJwt';
 
+import './styles/index.scss';
+
 export const App = () => {
+    const isDark = useAppSelector(state => state.theme.dark);
     const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -39,7 +42,7 @@ export const App = () => {
     }, [location, at, rt, dispatch, navigate]);
 
     return (
-        <div className="app">
+        <div className={`app ${isDark ? 'app_active' : ''}`}>
             <Outlet />
         </div>
     );

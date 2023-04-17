@@ -4,4 +4,8 @@
   text-align: center;
 
   @include font(2.4rem, 3rem, 700);
+
+  &_dark {
+    color: #D1D1D1
+  }
 }

@@ -15,7 +15,7 @@ export const Header = () => {
                 className={`${styles.header__button} ${isDark ? styles.header__button_dark : ''}`}
                 type="button"
                 onClick={() => {
-                    navigate('../menu/home');
+                    navigate(-1);
                 }}
             />
         </header>

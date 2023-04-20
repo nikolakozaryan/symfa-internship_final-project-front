@@ -1,1 +1,2 @@
-export * from './AuthForm/AuthForm.layout';
+export * from './AuthForm/AuthFormLayout';
+export * from './MenuLayout/MenuLayout';

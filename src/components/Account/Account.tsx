@@ -11,7 +11,6 @@ export const Account = () => {
     const dispatch = useAppDispatch();
 
     const handleClick = () => {
-        localStorage.clear();
         dispatch(resetAuthState());
         dispatch(resetUserState());
     };

@@ -1,4 +1,4 @@
-import type { Dish } from '../../store/types/dish.types';
+import type { Dish } from '../../store/types/dish';
 import { useAppSelector } from '../../store/selectors/appSelector';
 
 export const useCurrentDish = (dishId: string): Dish => {

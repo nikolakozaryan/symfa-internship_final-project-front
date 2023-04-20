@@ -1,8 +1,4 @@
-export enum ProfileRoutes {
-    Account = 'account',
-    Payment = 'payment',
-    History = 'history',
-}
+import { ProfileRoutes } from '../enums/profileRoutes';
 
 export type ProfileLinkType = {
     id: number;

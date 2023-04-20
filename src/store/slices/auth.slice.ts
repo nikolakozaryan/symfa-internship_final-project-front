@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { IAuthState } from './types';
-import { googleAuth, login, refresh, register } from '../../shared/api/actions';
+import { forgot, googleAuth, login, refresh, register } from '../../shared/api/actions';
 
 const initialState: IAuthState = {
     at: localStorage.getItem('at') || '',
@@ -14,7 +14,12 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        resetAuthState: () => initialState,
+        resetAuthState: () => {
+            localStorage.removeItem('at');
+            localStorage.removeItem('rt');
+
+            return initialState;
+        },
         resetError: state => {
             state.errorMessage = '';
         },
@@ -89,6 +94,18 @@ export const authSlice = createSlice({
         builder.addCase(refresh.rejected, (state, data) => {
             state.errorMessage = data.error.message as string;
             localStorage.clear();
+            state.isLoading = false;
+        });
+
+        builder.addCase(forgot.pending, state => {
+            state.errorMessage = '';
+            state.isLoading = true;
+        });
+        builder.addCase(forgot.fulfilled, state => {
+            state.errorMessage = 'SUCCESS';
+        });
+        builder.addCase(forgot.rejected, (state, data) => {
+            state.errorMessage = data.error.message as string;
             state.isLoading = false;
         });
     },

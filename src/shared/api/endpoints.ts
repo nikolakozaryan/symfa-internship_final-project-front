@@ -5,6 +5,7 @@ export const ENDPOINTS = {
         REFRESH: '/auth/refresh',
         LOGOUT: '/auth/logout',
         GOOGLE: '/auth/google',
+        FORGOT: '/auth/forgot',
     },
     USER: '/user',
     DISHES: {
@@ -13,4 +14,5 @@ export const ENDPOINTS = {
     },
     PAYMENTS: '/payments',
     ORDER: '/order',
+    DELIVERY: '/delivery',
 };

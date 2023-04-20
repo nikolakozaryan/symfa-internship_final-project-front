@@ -1,4 +1,5 @@
-@import '../../../app/styles';
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
 
 .promo {
   @include base-shadow;

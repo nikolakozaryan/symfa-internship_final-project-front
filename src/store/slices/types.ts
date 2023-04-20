@@ -1,5 +1,7 @@
+import type { OrdersResponse } from '../../shared/api/actions';
 import type { DishType, TasteType } from '../../shared/constants/dishes';
-import type { Dish } from '../types/dish.types';
+import type { IDeliveryData } from '../types/delivery';
+import type { Dish } from '../types/dish';
 
 export interface IState {
     errorMessage: string;
@@ -37,6 +39,10 @@ interface IDishesState extends IState {
     dishes: Dish[];
 }
 
+export interface IDeliveryState extends IState {
+    deliveries: IDeliveryData[];
+}
+
 export interface IMenuState extends IDishesState {
     type: DishType;
 }
@@ -47,4 +53,8 @@ export interface IFavsState extends IDishesState {
 
 export interface IThemeState {
     dark: boolean;
+}
+
+export interface IOrderState extends IState {
+    orders: OrdersResponse[];
 }

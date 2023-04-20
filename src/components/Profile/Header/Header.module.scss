@@ -1,11 +1,13 @@
-@import '../../../app/styles';
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
 
 .header {
+  @include base-shadow;
+
   width: 100%;
   padding: 2.9rem 2.3rem 0;
   background: $color-bg-item-light;
   border-radius: 0 0 4rem 4rem;
-  box-shadow: 0 .4rem 1.5rem #0000000D;
   transition: .4s;
 
   &__heading {

@@ -1,4 +1,5 @@
-@import '../../app/styles';
+@import '../../app/styles/abstracts/mixins';
+@import '../../app/styles/abstracts/variables';
 
 .button {
   @include font(1.6rem, 2.8rem, 600, $color-font-button);

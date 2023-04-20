@@ -3,6 +3,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
 import { Account } from '../../components/Account';
+import { Forgot } from '../../components/Auth/Forgot';
 import { Signin } from '../../components/Auth/Signin/Signin';
 import { Signup } from '../../components/Auth/Signup/Signup';
 import { History } from '../../components/History';
@@ -22,9 +23,7 @@ import {
 } from '../../pages';
 import { App } from '../app';
 
-const stripePromise = loadStripe(
-    'pk_test_51MsSd9EGkzaIt3SV9g5PvKMFGrYPwzlwhSHnPUGK78ZolRe2lCtZQyLlHRVgR319lBehN6jfND0r7wze5qhMgDUl00aY2y84wV',
-);
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY || '');
 
 export const router = createBrowserRouter([
     {
@@ -44,6 +43,10 @@ export const router = createBrowserRouter([
                         element: <Signup />,
                     },
                 ],
+            },
+            {
+                path: 'auth/forgot',
+                element: <Forgot />,
             },
             {
                 path: 'menu',

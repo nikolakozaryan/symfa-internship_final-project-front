@@ -1,8 +1,8 @@
 import type { RegisterOptions, UseFormReturn } from 'react-hook-form';
 
-import type { RegisterType } from '../constants/authInputs';
+import type { InputType } from '../constants/authInputs';
 
-export const getValidationOptions = (methods: UseFormReturn, inputType: RegisterType): RegisterOptions => {
+export const getValidationOptions = (methods: UseFormReturn, inputType: InputType): RegisterOptions => {
     switch (inputType) {
         case 'email':
             return {
@@ -25,7 +25,7 @@ export const getValidationOptions = (methods: UseFormReturn, inputType: Register
                 // eslint-disable-next-line consistent-return
                 validate: (val: string) => {
                     if (methods.watch('password') !== val) {
-                        return 'Passwords do no match';
+                        return 'Passwords do not match';
                     }
                 },
             };

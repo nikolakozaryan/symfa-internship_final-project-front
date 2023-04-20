@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import type { Dish } from '../../store/types/dish.types';
+import type { Dish } from '../../store/types/dish';
 import { About } from '../../components/Detailed/About';
 import { Cart } from '../../components/Detailed/Cart';
 import { Details } from '../../components/Detailed/Details';

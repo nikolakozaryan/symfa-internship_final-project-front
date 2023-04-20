@@ -3,7 +3,7 @@ import { useFormContext } from 'react-hook-form';
 
 import type { MyProps } from './types';
 import { getValidationOptions } from '../../../shared/config/formValidationConfig';
-import { AUTH_INPUTS, RegisterType } from '../../../shared/constants/authInputs';
+import { AUTH_INPUTS, InputType } from '../../../shared/constants/authInputs';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { VisibilityToggler } from '../../VisibilityToggler';
 
@@ -32,7 +32,7 @@ export const Input: FC<MyProps> = ({ inputType, form }) => {
             <input
                 {...methods.register(
                     registerName,
-                    form === 'signup' ? getValidationOptions(methods, registerName as RegisterType) : {},
+                    form !== 'signin' ? getValidationOptions(methods, registerName as InputType) : {},
                 )}
                 id={inputType}
                 className={`${styles.input} ${isDark ? styles.input_dark : ''}`}

@@ -1,4 +1,4 @@
-import type { Dish } from '../../../store/types/dish.types';
+import type { Dish } from '../../../store/types/dish';
 
 export type MyProps = {
     dish: Dish;

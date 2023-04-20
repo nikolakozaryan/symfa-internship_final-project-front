@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import type { Dish } from '../../store/types/dish.types';
+import type { Dish } from '../../store/types/dish';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { AddToCart } from '../AddToCart';
 import { FavButton } from '../FavButton';

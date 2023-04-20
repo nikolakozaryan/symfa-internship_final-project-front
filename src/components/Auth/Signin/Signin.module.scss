@@ -1,3 +1,6 @@
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
+
 .form {
   display: flex;
   flex-direction: column;
@@ -5,13 +8,29 @@
   width: 100%
 }
 
-.button-container {
-  width: 24.8rem;
-  height: 4.5rem;
+.button {
+  &__container {
+    width: 24.8rem;
+    height: 4.5rem;
+  }
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.forgot {
+  @include font(1.3rem, 1.8rem, 700);
+
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  text-transform: capitalize;
+  transform: translateY(-1.2rem);
+
+  &_dark {
+    color: #F2F6F7;
+  }
 }

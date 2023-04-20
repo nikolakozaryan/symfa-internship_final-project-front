@@ -2,7 +2,7 @@ import { FC, UIEventHandler, useEffect } from 'react';
 
 import type { MyProps } from '../Menu/Header/types';
 import { getDishes, getFavs } from '../../shared/api/actions/menu';
-import { MenuRoutes } from '../../shared/constants/menuRoutes';
+import { MenuRoutes } from '../../shared/enums/menuRoutes';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
 import { DishCard } from '../DishCard';

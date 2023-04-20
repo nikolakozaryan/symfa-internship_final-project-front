@@ -5,8 +5,8 @@ import { FavsBanner } from '../../components/FavsBanner';
 import { Filter } from '../../components/Filter';
 import { Header } from '../../components/Menu/Header';
 import { Searchbar } from '../../components/Searchbar';
-import { MenuLayout } from '../../layouts/MenuLayout/MenuLayout';
-import { MenuRoutes } from '../../shared/constants/menuRoutes';
+import { MenuLayout } from '../../layouts';
+import { MenuRoutes } from '../../shared/enums/menuRoutes';
 import { useAppSelector } from '../../store/selectors/appSelector';
 
 import styles from './Favorite.module.scss';

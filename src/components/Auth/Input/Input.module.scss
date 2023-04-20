@@ -1,4 +1,5 @@
-@import '../../../app/styles';
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
 
 .input {
   @include font(1.4rem, 2.8rem, 500);

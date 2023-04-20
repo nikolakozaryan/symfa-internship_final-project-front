@@ -5,6 +5,5 @@ export const AUTH_INPUTS = {
     confirm: { label: 'confirm password', type: 'password', registerName: 'confirm' },
 };
 
-export type RegisterType = 'username' | 'email' | 'password' | 'confirm';
-export type InputTypeValue = { label: string; type: 'text' | 'email' | 'password'; registerName: RegisterType };
 export type InputType = keyof typeof AUTH_INPUTS;
+export type InputTypeValue = { label: string; type: 'text' | 'email' | 'password'; registerName: InputType };

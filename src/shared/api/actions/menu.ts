@@ -2,7 +2,7 @@
 import type { AxiosPromise } from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import type { DishesResponse, ISearchAllParams, ISearchFavParams } from '../../../store/types/dish.types';
+import type { DishesResponse, ISearchAllParams, ISearchFavParams } from '../../../store/types/dish';
 import { ENDPOINTS } from '../endpoints';
 import { axiosInstance } from '../instance';
 

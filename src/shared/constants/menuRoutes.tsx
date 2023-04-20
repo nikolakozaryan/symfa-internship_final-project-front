@@ -1,14 +1,5 @@
-import {
-    BagIcon, BellIcon, BookIcon, HomeIcon, ProfileIcon,
-} from '../../components/Menu/NavIcons';
-
-export enum MenuRoutes {
-    Home = 'home',
-    Favorite = 'favorite',
-    Order = 'order',
-    Notifications = 'notifications',
-    Profile = 'profile',
-}
+import { BagIcon, BellIcon, BookIcon, HomeIcon, ProfileIcon } from '../../components/Menu/NavIcons';
+import { MenuRoutes } from '../enums/menuRoutes';
 
 export type MenuLinkType = {
     id: number;

@@ -2,7 +2,7 @@
 import type { AxiosPromise } from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import type { UserData } from '../../../store/types/user.type';
+import type { UserData } from '../../../store/types/user';
 import { ENDPOINTS } from '../endpoints';
 import { axiosInstance } from '../instance';
 

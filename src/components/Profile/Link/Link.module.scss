@@ -1,4 +1,5 @@
-@import '../../../app/styles/';
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
 
 .link {
   @include font(1.2rem, 1.8rem, 400, $color-font-button);

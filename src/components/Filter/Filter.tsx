@@ -2,7 +2,7 @@ import type { FC, WheelEventHandler } from 'react';
 
 import type { MyProps } from '../Menu/Header/types';
 import { DISH_TASTE, DISH_TYPES } from '../../shared/constants/dishes';
-import { MenuRoutes } from '../../shared/constants/menuRoutes';
+import { MenuRoutes } from '../../shared/enums/menuRoutes';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { FilterItem } from '../FilterItem';
 

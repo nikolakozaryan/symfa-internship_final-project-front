@@ -1,4 +1,4 @@
-import type { MenuRoutes } from '../../../shared/constants/menuRoutes';
+import type { MenuRoutes } from '../../../shared/enums/menuRoutes';
 
 export type MyProps = {
     routeTo: MenuRoutes;

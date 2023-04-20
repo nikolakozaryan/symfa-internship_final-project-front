@@ -1,0 +1,54 @@
+@import '../../app/styles/abstracts/mixins';
+@import '../../app/styles/abstracts/variables';
+
+.order {
+  @include base-shadow;
+
+  padding: 2rem;
+  background: $color-bg-item-light;
+  border-radius: 2rem;
+
+  &__dish {
+    @include font(1.4rem, 2.8rem, 400);
+
+    padding: .5rem 0;
+    text-transform: capitalize;
+    border-bottom: dashed .1rem #BEBEBE;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  &__date {
+    @include font(1.6rem, 2rem, 600);
+
+    padding-bottom: 1rem;
+    border-bottom: solid .1rem #BEBEBE;
+  }
+
+  &__total {
+    @include font(1.8rem, 2.8rem, 700);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+
+    &_price {
+      color: #FF6347
+    }
+  }
+
+  &_dark {
+    background: $color-bg-item-dark;
+
+    .order {
+      &__dish,
+      &__total,
+      &__date {
+        color: #D1D1D1
+      }
+    }
+  }
+}

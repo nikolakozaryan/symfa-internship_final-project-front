@@ -6,6 +6,7 @@ import { AuthFormLayout } from '../../../layouts';
 import { login, register } from '../../../shared/api/actions';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { useAppDispatch } from '../../../store/services/appDispatch';
+import { resetError } from '../../../store/slices/auth.slice';
 import { SubmitButton } from '../../SubmitButton';
 import { Input } from '../Input';
 
@@ -29,6 +30,10 @@ export const Signup = () => {
             dispatch(login({ email, password }));
         }
     }, [dispatch, error, methods]);
+
+    useEffect(() => {
+        dispatch(resetError());
+    }, [dispatch]);
 
     return (
         <AuthFormLayout type="signup">

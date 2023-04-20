@@ -1,4 +1,5 @@
-@import '../../../app/styles';
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
 
 .error {
   @include font(1.6rem, 3rem, 400, $color-bg-item-light);
@@ -7,6 +8,7 @@
   top: -3rem;
   right: 0;
   left: 0;
+  z-index: 2;
   height: 3rem;
   text-align: center;
   background: crimson;

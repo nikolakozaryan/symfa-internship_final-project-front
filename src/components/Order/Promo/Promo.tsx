@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../../store/selectors/appSelector';
 
-import styles from './Promo.module.scss';
+import styles from './styles.module.scss';
 
 export const Promo = () => {
     const isDark = useAppSelector(state => state.theme.dark);

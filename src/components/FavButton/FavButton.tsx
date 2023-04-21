@@ -1,12 +1,12 @@
 import type { FC, MouseEvent } from 'react';
 
 import type { MyProps } from './types';
-import { toggleFav } from '../../shared/api/actions/user';
+import { toggleFav } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
 import { FavIcon } from './FavIcon';
 
-import styles from './FavButton.module.scss';
+import styles from './styles.module.scss';
 
 export const FavButton: FC<MyProps> = ({ id, large }) => {
     const favs = useAppSelector(state => state.user.favs);

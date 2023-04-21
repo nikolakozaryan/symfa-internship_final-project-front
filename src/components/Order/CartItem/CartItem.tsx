@@ -4,7 +4,7 @@ import type { MyProps } from './types';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { AmountPicker } from '../../AmountPicker';
 
-import styles from './CartItem.module.scss';
+import styles from './styles.module.scss';
 
 export const CartItem: FC<MyProps> = ({ cartDish }) => {
     const {

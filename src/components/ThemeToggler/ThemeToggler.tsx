@@ -1,8 +1,8 @@
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { toggleTheme } from '../../store/slices/theme.slice';
+import { toggleTheme } from '../../store/slices/theme';
 
-import styles from './ThemeToggler.module.scss';
+import styles from './styles.module.scss';
 
 export const ThemeToggler = () => {
     const dispatch = useAppDispatch();

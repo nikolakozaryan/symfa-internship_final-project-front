@@ -6,9 +6,11 @@ import type { UserData } from '../../../store/types/user';
 import { ENDPOINTS } from '../endpoints';
 import { axiosInstance } from '../instance';
 
-const getUserData = (): AxiosPromise<UserData> => axiosInstance.get(ENDPOINTS.USER);
-const toggleRemoteFav = (params: { dishId: string }): AxiosPromise<string> =>
-    axiosInstance.patch(ENDPOINTS.USER, null, { params });
-
-export const getUser = createAsyncThunk('user/getUser', getUserData);
-export const toggleFav = createAsyncThunk('user/addFav', toggleRemoteFav);
+export const getUser = createAsyncThunk(
+    'user/getUser',
+    (): AxiosPromise<UserData> => axiosInstance.get(ENDPOINTS.USER),
+);
+export const toggleFav = createAsyncThunk(
+    'user/addFav',
+    (params: { dishId: string }): AxiosPromise<string> => axiosInstance.patch(ENDPOINTS.USER, null, { params }),
+);

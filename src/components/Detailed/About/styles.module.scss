@@ -1,0 +1,26 @@
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
+
+.about {
+  flex: 1;
+  margin-bottom: 1rem;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none
+  }
+
+  &_heading {
+    @include font(1.8rem, 2.7rem, 700);
+
+    margin-bottom: .5rem;
+
+    &_dark {
+      color: $color-font-main-dark-second
+    }
+  }
+
+  &_content {
+    @include font(1.4rem, 2.8rem, 400, #616F80);
+  }
+}

@@ -1,4 +1,4 @@
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 
 /* eslint-disable max-len */
 export const BagIcon = () => (

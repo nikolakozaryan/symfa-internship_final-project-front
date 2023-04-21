@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import type { MyProps } from './types';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 
-import styles from './About.module.scss';
+import styles from './styles.module.scss';
 
 export const About: FC<MyProps> = ({ description }) => {
     const isDark = useAppSelector(state => state.theme.dark);

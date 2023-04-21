@@ -1,0 +1,59 @@
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
+
+.input {
+  display: none;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: $color-bg-item-light;
+  border: .1rem solid $color-border;
+  border-radius: 50%;
+  transition: .4s;
+
+  &__active {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: transparent;
+    border-radius: 50%;
+    transition: inherit;
+  }
+}
+
+.label {
+  display: grid;
+  grid-template-columns: 3rem 1fr 1.8rem;
+  gap: 1.5rem;
+  justify-items: center;
+  cursor: pointer;
+
+  &__text {
+    @include font(1.2rem, 1.8rem, 400, $color-font-button);
+
+    justify-self: start;
+    text-transform: capitalize;
+  }
+
+  input:checked~.radio {
+    border-color: $color-accent;
+
+    .radio {
+      &__active {
+        background: $color-accent;
+      }
+    }
+  }
+
+  &_dark {
+    .label {
+      &__text {
+        color: $color-font-main-dark-second
+      }
+    }
+  }
+}

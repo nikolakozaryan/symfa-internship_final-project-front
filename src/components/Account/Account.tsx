@@ -1,18 +1,28 @@
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { resetAuthState } from '../../store/slices/auth.slice';
-import { resetUserState } from '../../store/slices/user.slice';
+import { resetAuthState } from '../../store/slices/auth';
+import { resetCartState } from '../../store/slices/cart';
+import { resetDeliveryState } from '../../store/slices/delivery';
+import { resetFavState } from '../../store/slices/fav';
+import { resetMenuState } from '../../store/slices/menu';
+import { resetOrderState } from '../../store/slices/order';
+import { resetUserState } from '../../store/slices/user';
 import { ThemeToggler } from '../ThemeToggler';
 
-import styles from './Account.module.scss';
+import styles from './styles.module.scss';
 
 export const Account = () => {
     const isDark = useAppSelector(state => state.theme.dark);
     const dispatch = useAppDispatch();
 
     const handleClick = () => {
-        dispatch(resetAuthState());
         dispatch(resetUserState());
+        dispatch(resetAuthState());
+        dispatch(resetCartState());
+        dispatch(resetDeliveryState());
+        dispatch(resetFavState());
+        dispatch(resetMenuState());
+        dispatch(resetOrderState());
     };
 
     return (

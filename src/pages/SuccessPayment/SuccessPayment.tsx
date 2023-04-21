@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import { useAppSelector } from '../../store/selectors/appSelector';
 
-import styles from './SuccessPayment.module.scss';
+import styles from './styles.module.scss';
 
 export const SuccessPayment = () => {
     const isDark = useAppSelector(state => state.theme.dark);

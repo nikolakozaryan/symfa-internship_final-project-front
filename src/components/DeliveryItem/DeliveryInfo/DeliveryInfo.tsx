@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import type { MyProps } from './types';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 
-import styles from './DeliveryInfo.module.scss';
+import styles from './styles.module.scss';
 
 export const DeliveryInfo: FC<MyProps> = ({ type, time, destination }) => {
     const isTime = type === 'time';

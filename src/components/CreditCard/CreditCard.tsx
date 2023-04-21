@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../store/selectors/appSelector';
 
-import styles from './CreditCard.module.scss';
+import styles from './styles.module.scss';
 
 export const CreditCard = () => {
     const username = useAppSelector(state => state.user.username);

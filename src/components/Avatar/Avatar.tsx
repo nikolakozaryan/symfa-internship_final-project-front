@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { API_URL } from '../../shared/constants/baseURL';
 import { useAppSelector } from '../../store/selectors/appSelector';
 
-import styles from './Avatar.module.scss';
+import styles from './styles.module.scss';
 
 export const Avatar = () => {
     const username = useAppSelector(state => state.user.username);

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import type { MyProps } from './types';
 
-import styles from './FavIcon.module.scss';
+import styles from './styles.module.scss';
 
 export const FavIcon:FC<MyProps> = ({ isFav }) => (
     <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 72 72">

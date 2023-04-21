@@ -6,7 +6,7 @@ import type { SignInFormInputs } from '../Signin/types';
 import { forgot, login } from '../../../shared/api/actions';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { useAppDispatch } from '../../../store/services/appDispatch';
-import { resetError } from '../../../store/slices/auth.slice';
+import { resetError } from '../../../store/slices/auth';
 import { SubmitButton } from '../../SubmitButton';
 import { Error } from '../Error';
 import { Input } from '../Input';

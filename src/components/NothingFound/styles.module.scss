@@ -1,0 +1,12 @@
+@import '../../app/styles/abstracts/mixins';
+@import '../../app/styles/abstracts/variables';
+
+.empty {
+  text-align: center;
+
+  @include font(2.4rem, 3rem, 700);
+
+  &_dark {
+    color: $color-font-main-dark-second
+  }
+}

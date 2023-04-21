@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
 import { DeliveryItem } from '../../components/DeliveryItem';
-import { getDeliveries } from '../../shared/api/actions/delivery';
+import { getDeliveries } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
 
-import styles from './Notifications.module.scss';
+import styles from './styles.module.scss';
 
 export const Notifications = () => {
     const dispatch = useAppDispatch();

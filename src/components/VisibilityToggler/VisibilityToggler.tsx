@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import type { MyProps } from './types';
 
-import styles from './VisibilityToggler.module.scss';
+import styles from './styles.module.scss';
 
 export const VisibilityToggler: FC<MyProps> = ({ changeInputType, curType }) => {
     const [isClosed, setIsClosed] = useState(false);

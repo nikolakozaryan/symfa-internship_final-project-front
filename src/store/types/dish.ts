@@ -30,3 +30,8 @@ export interface ISearchAllParams extends IParams {
 export interface ISearchFavParams extends IParams {
     taste: TasteType;
 }
+
+export type CartDish = {
+    dish: Dish;
+    amount: number;
+};

@@ -3,7 +3,7 @@ import { AddPaymentMethod } from '../AddPaymentMethod';
 import { CreditCard } from '../CreditCard';
 import { PaymentMethods } from '../PaymentMethods';
 
-import styles from './Payments.module.scss';
+import styles from './styles.module.scss';
 
 export const Payments = () => {
     const isDark = useAppSelector(state => state.theme.dark);

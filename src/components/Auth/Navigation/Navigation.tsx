@@ -1,7 +1,7 @@
 import { AUTH_ROUTES } from '../../../shared/constants/authRoutes';
 import { Link } from '../Link';
 
-import styles from './Naigation.module.scss';
+import styles from './styles.module.scss';
 
 export const Navigation = () => (
     <nav>

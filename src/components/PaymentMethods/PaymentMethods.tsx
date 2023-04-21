@@ -2,7 +2,7 @@ import { PAYMENT_METHODS } from '../../shared/constants/paymentMethods';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { PaymentMethod } from './PaymentMethod';
 
-import styles from './PaymentMethods.module.scss';
+import styles from './styles.module.scss';
 
 export const PaymentMethods = () => {
     const isDark = useAppSelector(state => state.theme.dark);

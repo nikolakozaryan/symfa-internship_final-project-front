@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../store/selectors/appSelector';
 
-import styles from './NothingFound.module.scss';
+import styles from './styles.module.scss';
 
 export const NothingFound = () => {
     const isDark = useAppSelector(state => state.theme.dark);

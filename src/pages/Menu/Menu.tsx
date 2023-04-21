@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { MenuNavigation } from '../../components/Menu/Navigation';
-import { getUser } from '../../shared/api/actions/user';
+import { getUser } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
 

@@ -1,12 +1,12 @@
 import { FC, MouseEvent, useState } from 'react';
 
-import type { CartDish } from '../../../store/slices/types';
+import type { CartDish } from '../../../store/types/dish';
 import type { MyProps } from './types';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { useAppDispatch } from '../../../store/services/appDispatch';
-import { addToCart, changeAmount, resetSecret } from '../../../store/slices/cart.slice';
+import { addToCart, changeAmount, resetSecret } from '../../../store/slices/cart';
 
-import styles from './Cart.module.scss';
+import styles from './styles.module.scss';
 
 export const Cart: FC<MyProps> = ({ dish }) => {
     const dispatch = useAppDispatch();
@@ -14,6 +14,7 @@ export const Cart: FC<MyProps> = ({ dish }) => {
     const secret = useAppSelector(state => state.cart.secret);
     const cartDish = cartDishes.find(item => item.dish.id === dish.id);
     const inCart = !!cartDish;
+    const isDark = useAppSelector(state => state.theme.dark);
     const [amount, setAmount] = useState(1);
 
     const addManyToCart = (e: MouseEvent) => {
@@ -23,7 +24,9 @@ export const Cart: FC<MyProps> = ({ dish }) => {
     };
 
     const handleClick = (diff: boolean) => {
-        if (secret) dispatch(resetSecret());
+        if (secret) {
+            dispatch(resetSecret());
+        }
 
         if (inCart) {
             dispatch(changeAmount({ id: dish.id, newAmount: cartDish.amount + (diff ? 1 : -1) }));
@@ -51,7 +54,7 @@ export const Cart: FC<MyProps> = ({ dish }) => {
                 />
                 <input
                     disabled
-                    className={`${styles.input} ${styles.input_dark}`}
+                    className={`${styles.input} ${isDark ? styles.input_dark : ''}`}
                     value={inCart ? (cartDishes.find(item => item.dish.id === dish.id) as CartDish).amount : amount}
                     type="number"
                 />

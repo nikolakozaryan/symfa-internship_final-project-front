@@ -3,9 +3,9 @@ import type { FC, MouseEvent } from 'react';
 import type { MyProps } from './types';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { addToCart } from '../../store/slices/cart.slice';
+import { addToCart } from '../../store/slices/cart';
 
-import styles from './AddToCart.module.scss';
+import styles from './styles.module.scss';
 
 export const AddToCart: FC<MyProps> = ({ dish }) => {
     const dispatch = useAppDispatch();

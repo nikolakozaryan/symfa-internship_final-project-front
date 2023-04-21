@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { forwardRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import type { Dish } from '../../store/types/dish';
@@ -6,15 +6,15 @@ import { useAppSelector } from '../../store/selectors/appSelector';
 import { AddToCart } from '../AddToCart';
 import { FavButton } from '../FavButton';
 
-import styles from './DishCard.module.scss';
+import styles from './styles.module.scss';
 
-export const DishCard: FC<Dish> = dish => {
+export const DishCard = forwardRef<HTMLDivElement, Dish>((dish, ref) => {
     const isDark = useAppSelector(state => state.theme.dark);
     const { id, image, price, product, productName } = dish;
 
     return (
         <NavLink to={`../${id}`} className={`${styles.card} ${isDark ? styles.card_dark : ''}`}>
-            <div className={styles.card__image__container}>
+            <div ref={ref} className={styles.card__image__container}>
                 <img className={styles.card__image} src={image} alt="iamge" />
                 <FavButton id={id} />
             </div>
@@ -31,4 +31,5 @@ export const DishCard: FC<Dish> = dish => {
             <AddToCart dish={dish} />
         </NavLink>
     );
-};
+});
+DishCard.displayName = 'DishCard';

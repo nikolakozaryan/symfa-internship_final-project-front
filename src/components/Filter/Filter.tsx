@@ -6,7 +6,7 @@ import { MenuRoutes } from '../../shared/enums/menuRoutes';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { FilterItem } from '../FilterItem';
 
-import styles from './Filter.module.scss';
+import styles from './styles.module.scss';
 
 export const Filter: FC<MyProps> = ({ pageType }) => {
     const dishType = useAppSelector(state => state.menu.type);

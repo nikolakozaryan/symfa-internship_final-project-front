@@ -4,7 +4,7 @@ import type { MyProps } from './types';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { Avatar } from '../../Avatar';
 
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 export const Header: FC<MyProps> = ({ pageType }) => {
     const isDark = useAppSelector(state => state.theme.dark);

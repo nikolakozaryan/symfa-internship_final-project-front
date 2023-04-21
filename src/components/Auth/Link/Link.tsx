@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import type { MyProps } from './types';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 
-import styles from './Link.module.scss';
+import styles from './styles.module.scss';
 
 export const Link: FC<MyProps> = ({ value, to }) => {
     const isDark = useAppSelector(state => state.theme.dark);

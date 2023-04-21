@@ -4,7 +4,7 @@ import { Header } from '../../components/Order/Header';
 import { Promo } from '../../components/Order/Promo';
 import { Total } from '../../components/Order/Total';
 
-import styles from './Orders.module.scss';
+import styles from './styles.module.scss';
 
 export const Orders = () => (
     <section className={styles.default}>

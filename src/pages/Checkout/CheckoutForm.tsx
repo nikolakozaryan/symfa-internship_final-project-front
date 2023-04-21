@@ -12,9 +12,9 @@ import { Loader } from '../../components/Loader';
 import { createOrder, getSecret } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { resetCart, setSecret } from '../../store/slices/cart.slice';
+import { resetCartState, setSecret } from '../../store/slices/cart';
 
-import styles from './CheckoutForm.module.scss';
+import styles from './styles.module.scss';
 
 export const CheckoutForm = () => {
     const isDark = useAppSelector(state => state.theme.dark);
@@ -71,15 +71,14 @@ export const CheckoutForm = () => {
             if (result?.error) {
                 navigate('../failed');
             } else {
-                const { amount, created } = result?.paymentIntent as PaymentIntent;
+                const { amount } = result?.paymentIntent as PaymentIntent;
 
                 const dishIds = cart.map(item => item.dish.id);
                 const totalPrice = amount / 100;
-                const createdAt = created * 1000;
 
-                await createOrder({ dishIds, totalPrice, createdAt });
+                await createOrder({ dishIds, totalPrice });
 
-                dispatch(resetCart());
+                dispatch(resetCartState());
                 navigate('../success');
             }
         } catch (error) {

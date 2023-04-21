@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import type { MyProps } from './types';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { changeAmount, resetSecret } from '../../store/slices/cart.slice';
+import { changeAmount, resetSecret } from '../../store/slices/cart';
 
-import styles from './AmountPicker.module.scss';
+import styles from './styles.module.scss';
 
 export const AmountPicker: FC<MyProps> = ({ amount, dishId }) => {
     const dispatch = useAppDispatch();

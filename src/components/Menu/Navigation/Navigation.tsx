@@ -2,7 +2,7 @@ import { MENU_LINKS } from '../../../shared/constants/menuRoutes';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { MenuLink } from '../Link';
 
-import styles from './Navigation.module.scss';
+import styles from './styles.module.scss';
 
 export const MenuNavigation = () => {
     const isDark = useAppSelector(state => state.theme.dark);

@@ -7,12 +7,12 @@ import { AuthFormLayout } from '../../../layouts';
 import { login } from '../../../shared/api/actions';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { useAppDispatch } from '../../../store/services/appDispatch';
-import { resetError } from '../../../store/slices/auth.slice';
+import { resetError } from '../../../store/slices/auth';
 import { GoogleButton } from '../../GoogleButton/GoogleButton';
 import { SubmitButton } from '../../SubmitButton';
 import { Input } from '../Input';
 
-import styles from './Signin.module.scss';
+import styles from './styles.module.scss';
 
 export const Signin = () => {
     const dispatch = useAppDispatch();

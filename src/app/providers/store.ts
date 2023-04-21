@@ -1,13 +1,13 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 
-import { authSlice } from '../../store/slices/auth.slice';
-import { cartSlice } from '../../store/slices/cart.slice';
-import { deliverySlice } from '../../store/slices/delivery.slice';
-import { favSlice } from '../../store/slices/fav.slice';
-import { menuSlice } from '../../store/slices/menu.slice';
-import { orderSlice } from '../../store/slices/order.slice';
-import { themeSlice } from '../../store/slices/theme.slice';
-import { userSlice } from '../../store/slices/user.slice';
+import { authSlice } from '../../store/slices/auth';
+import { cartSlice } from '../../store/slices/cart';
+import { deliverySlice } from '../../store/slices/delivery';
+import { favSlice } from '../../store/slices/fav';
+import { menuSlice } from '../../store/slices/menu';
+import { orderSlice } from '../../store/slices/order';
+import { themeSlice } from '../../store/slices/theme';
+import { userSlice } from '../../store/slices/user';
 
 export const store = configureStore({
     reducer: {
@@ -21,6 +21,7 @@ export const store = configureStore({
         order: orderSlice.reducer,
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware({ serializableCheck: false }),
+    devTools: process.env.NODE_ENV !== 'production',
 });
 
 export type AppDispatch = typeof store.dispatch;

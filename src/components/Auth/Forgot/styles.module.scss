@@ -58,7 +58,7 @@
   &_dark {
     &::after,
     &::before {
-      background: #D1D1D1;
+      background: $color-font-main-dark-second
     }
   }
 }

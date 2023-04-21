@@ -6,11 +6,11 @@ import { AuthFormLayout } from '../../../layouts';
 import { login, register } from '../../../shared/api/actions';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { useAppDispatch } from '../../../store/services/appDispatch';
-import { resetError } from '../../../store/slices/auth.slice';
+import { resetError } from '../../../store/slices/auth';
 import { SubmitButton } from '../../SubmitButton';
 import { Input } from '../Input';
 
-import styles from './Signup.module.scss';
+import styles from './styles.module.scss';
 
 export const Signup = () => {
     const error = useAppSelector(state => state.auth.errorMessage);

@@ -13,7 +13,7 @@
 
     padding: .5rem 0;
     text-transform: capitalize;
-    border-bottom: dashed .1rem #BEBEBE;
+    border-bottom: dashed .1rem $color-border;
 
     &:first-of-type {
       padding-top: 0;
@@ -24,7 +24,7 @@
     @include font(1.6rem, 2rem, 600);
 
     padding-bottom: 1rem;
-    border-bottom: solid .1rem #BEBEBE;
+    border-bottom: solid .1rem $color-border;
   }
 
   &__total {
@@ -47,7 +47,7 @@
       &__dish,
       &__total,
       &__date {
-        color: #D1D1D1
+        color: $color-font-main-dark-second
       }
     }
   }

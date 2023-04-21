@@ -2,16 +2,16 @@ import { NavLink } from 'react-router-dom';
 
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { resetCart } from '../../store/slices/cart.slice';
+import { resetCartState } from '../../store/slices/cart';
 
-import styles from './FailedPayment.module.scss';
+import styles from './styles.module.scss';
 
 export const FailedPayment = () => {
     const dispatch = useAppDispatch();
     const isDark = useAppSelector(state => state.theme.dark);
 
     const handleClick = () => {
-        dispatch(resetCart());
+        dispatch(resetCartState());
     };
 
     return (
@@ -22,7 +22,11 @@ export const FailedPayment = () => {
                 <NavLink className={`${styles.link} ${styles.link_rebill}`} to="../menu/order">
                     Try again
                 </NavLink>
-                <NavLink onClick={handleClick} className={styles.link} to="../menu/home">
+                <NavLink
+                    onClick={handleClick}
+                    className={`${styles.link} ${isDark ? styles.link_dark : ''}`}
+                    to="../menu/home"
+                >
                     Go to main page
                 </NavLink>
             </div>

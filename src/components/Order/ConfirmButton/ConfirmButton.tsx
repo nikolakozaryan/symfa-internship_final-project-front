@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAppSelector } from '../../../store/selectors/appSelector';
 
-import styles from './ConfirmButton.module.scss';
+import styles from './styles.module.scss';
 
 export const ConfirmButton = () => {
     const cart = useAppSelector(state => state.cart.dishes);

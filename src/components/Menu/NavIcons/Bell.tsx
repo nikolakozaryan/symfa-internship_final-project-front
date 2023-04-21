@@ -1,4 +1,4 @@
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 /* eslint-disable max-len */
 export const BellIcon = () => (
     <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 80 80">

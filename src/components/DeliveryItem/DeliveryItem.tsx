@@ -5,7 +5,7 @@ import { API_URL } from '../../shared/constants/baseURL';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { DeliveryInfo } from './DeliveryInfo';
 
-import styles from './DeliveryItem.module.scss';
+import styles from './styles.module.scss';
 
 export const DeliveryItem: FC<IDeliveryData> = ({ destination, deliveryDate, deliveryman }) => {
     const [time, setTime] = useState(0);

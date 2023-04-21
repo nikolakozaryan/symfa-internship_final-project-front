@@ -1,7 +1,7 @@
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { Avatar } from '../../Avatar';
 
-import styles from './UserInfo.module.scss';
+import styles from './styles.module.scss';
 
 export const UserInfo = () => {
     const isDark = useAppSelector(state => state.theme.dark);

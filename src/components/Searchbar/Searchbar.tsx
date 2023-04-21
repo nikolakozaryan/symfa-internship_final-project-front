@@ -4,10 +4,10 @@ import type { MyProps } from '../Menu/Header/types';
 import { useDebounce } from '../../shared/hooks/useDebouce';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { setFavSearch } from '../../store/slices/fav.slice';
-import { setSearch } from '../../store/slices/menu.slice';
+import { setFavSearch } from '../../store/slices/fav';
+import { setSearch } from '../../store/slices/menu';
 
-import styles from './Searchbar.module.scss';
+import styles from './styles.module.scss';
 
 export const Searchbar: FC<MyProps> = ({ pageType }) => {
     const isDark = useAppSelector(state => state.theme.dark);

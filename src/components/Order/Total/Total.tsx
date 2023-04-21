@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../../store/selectors/appSelector';
 
-import styles from './Total.module.scss';
+import styles from './styles.module.scss';
 
 export const Total = () => {
     const isDark = useAppSelector(state => state.theme.dark);

@@ -9,7 +9,7 @@ import { MenuLayout } from '../../layouts';
 import { MenuRoutes } from '../../shared/enums/menuRoutes';
 import { useAppSelector } from '../../store/selectors/appSelector';
 
-import styles from './Favorite.module.scss';
+import styles from './styles.module.scss';
 
 export const Favorite = () => {
     const isDark = useAppSelector(state => state.theme.dark);

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { OrdersResponse } from '../../shared/api/actions';
+import type { OrdersResponse } from '../../store/types/order';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { parseDate } from '../../utils/parseDate';
 

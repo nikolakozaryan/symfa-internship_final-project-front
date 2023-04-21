@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import type { MyProps } from './types';
 
-import styles from './Error.module.scss';
+import styles from './styles.module.scss';
 
 export const Error: FC<MyProps> = ({ error }) => {
     const renderError = error && error !== 'SUCCESS';

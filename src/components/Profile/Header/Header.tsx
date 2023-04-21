@@ -2,7 +2,7 @@ import { useAppSelector } from '../../../store/selectors/appSelector';
 import { Navigation } from '../Navigation';
 import { UserInfo } from '../UserInfo';
 
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 export const Header = () => {
     const isDark = useAppSelector(state => state.theme.dark);

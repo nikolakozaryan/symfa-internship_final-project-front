@@ -1,7 +1,7 @@
 import { PROFILE_LINKS } from '../../../shared/constants/profileRoutes';
 import { Link } from '../Link';
 
-import styles from './Navigation.module.scss';
+import styles from './styles.module.scss';
 
 export const Navigation = () => (
     <nav>

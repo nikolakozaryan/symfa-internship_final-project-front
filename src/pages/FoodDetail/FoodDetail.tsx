@@ -9,7 +9,7 @@ import { FavButton } from '../../components/FavButton';
 import { useCurrentDish } from '../../shared/hooks/useCurrentDish';
 import { useAppSelector } from '../../store/selectors/appSelector';
 
-import styles from './FoodDetail.module.scss';
+import styles from './styles.module.scss';
 
 export const FoodDetail = () => {
     const navigate = useNavigate();

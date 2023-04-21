@@ -1,0 +1,51 @@
+@import '../../../app/styles/abstracts/mixins';
+@import '../../../app/styles/abstracts/variables';
+
+.container {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  background: $color-accent;
+  border-radius: 1rem;
+  box-shadow: 0 .4rem .5rem #0000000D;
+
+  &_time,
+  &_address {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &_time {
+    background-image: url('../../../shared/assets/icons/time.png');
+  }
+
+  &_address {
+    background-image: url('../../../shared/assets/icons/map.png');
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  &__text {
+    @include font(.8rem, 1rem, 500, $color-border);
+
+    text-transform: capitalize;
+  }
+
+  &__value {
+    @include font(.9rem, 1.4rem, 600);
+
+    &_dark {
+      color: $color-font-main-dark-second
+    }
+  }
+}

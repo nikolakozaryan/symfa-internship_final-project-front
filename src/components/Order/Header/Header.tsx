@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAppSelector } from '../../../store/selectors/appSelector';
 
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 export const Header = () => {
     const isDark = useAppSelector(state => state.theme.dark);

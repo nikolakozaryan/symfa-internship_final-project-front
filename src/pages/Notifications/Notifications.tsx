@@ -1,22 +1,12 @@
-import { useEffect } from 'react';
 
 import { DeliveryItem } from '../../components/DeliveryItem';
-import { getDeliveries } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
-import { useAppDispatch } from '../../store/services/appDispatch';
 
 import styles from './styles.module.scss';
 
 export const Notifications = () => {
-    const dispatch = useAppDispatch();
-    const { deliveries, errorMessage } = useAppSelector(state => state.delivery);
+    const deliveries = useAppSelector(state => state.delivery.deliveries);
     const isDark = useAppSelector(state => state.theme.dark);
-
-    useEffect(() => {
-        if ((deliveries.length < 2) && errorMessage !== 'SUCCESS') {
-            dispatch(getDeliveries());
-        }
-    }, [deliveries, dispatch, errorMessage]);
 
     return (
         <section className={styles.notifications}>

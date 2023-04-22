@@ -13,7 +13,7 @@ export const Notifications = () => {
     const isDark = useAppSelector(state => state.theme.dark);
 
     useEffect(() => {
-        if (!deliveries.length && errorMessage !== 'SUCCESS') {
+        if ((deliveries.length < 2) && errorMessage !== 'SUCCESS') {
             dispatch(getDeliveries());
         }
     }, [deliveries, dispatch, errorMessage]);

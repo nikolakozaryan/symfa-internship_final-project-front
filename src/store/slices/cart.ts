@@ -30,12 +30,17 @@ export const cartSlice = createSlice({
             return { ...state, secret };
         },
         addToCart: (state, action: PayloadAction<CartDish>) => {
-            const dishes = state.dishes.concat(action.payload);
+            const dish = state.dishes.find(item => item.dish.id === action.payload.dish.id);
 
-            return { ...state, dishes };
-        },
-        removeFromCart: (state, action: PayloadAction<string>) => {
-            const dishes = state.dishes.filter(cartDish => cartDish.dish.id !== action.payload);
+            const mapCb = (item: CartDish) => {
+                if (item.dish.id === dish?.dish.id) {
+                    return { ...item, amount: item.amount + action.payload.amount };
+                }
+
+                return item;
+            };
+
+            const dishes = dish ? state.dishes.map(mapCb) : state.dishes.concat(action.payload);
 
             return { ...state, dishes };
         },
@@ -59,4 +64,4 @@ export const cartSlice = createSlice({
     },
 });
 
-export const { addToCart, removeFromCart, resetCartState, changeAmount, setSecret, resetSecret } = cartSlice.actions;
+export const { addToCart, resetCartState, changeAmount, setSecret, resetSecret } = cartSlice.actions;

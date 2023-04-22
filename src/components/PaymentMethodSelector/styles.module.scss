@@ -1,0 +1,49 @@
+@import '../../app/styles/abstracts/mixins';
+@import '../../app/styles/abstracts/variables';
+
+.payments {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+
+  &__container {
+    width: 100%;
+    padding: 2rem;
+    background: $color-bg-item-light;
+    border-radius: 1.5rem;
+
+    &_dark {
+      background: $color-bg-item-dark;
+    }
+  }
+}
+
+.button {
+  @include font(1.4rem, 2.8rem, 600);
+
+  width: 100%;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+
+  &_new {
+    @include base-shadow;
+
+    padding: 1.2rem;
+    background: $color-accent;
+  }
+
+  &_default {
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+
+    &_dark {
+      color: $color-font-main-dark-second;
+    }
+  }
+}

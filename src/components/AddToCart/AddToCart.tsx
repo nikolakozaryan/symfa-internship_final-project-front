@@ -1,7 +1,6 @@
 import type { FC, MouseEvent } from 'react';
 
 import type { MyProps } from './types';
-import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
 import { addToCart } from '../../store/slices/cart';
 
@@ -9,8 +8,6 @@ import styles from './styles.module.scss';
 
 export const AddToCart: FC<MyProps> = ({ dish }) => {
     const dispatch = useAppDispatch();
-    const cartDishes = useAppSelector(state => state.cart.dishes);
-    const inCart = !!cartDishes.find(cartDish => cartDish.dish.id === dish.id);
 
     const handleClick = (e: MouseEvent) => {
         e.preventDefault();
@@ -19,7 +16,7 @@ export const AddToCart: FC<MyProps> = ({ dish }) => {
     };
 
     return (
-        <button disabled={inCart} onClick={handleClick} className={styles.button} type="button">
+        <button onClick={handleClick} className={styles.button} type="button">
             Add to Cart
         </button>
     );

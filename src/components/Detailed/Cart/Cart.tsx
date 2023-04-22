@@ -1,19 +1,18 @@
 import { FC, MouseEvent, useState } from 'react';
 
-import type { CartDish } from '../../../store/types/dish';
 import type { MyProps } from './types';
+import { cancelPayment } from '../../../shared/api/actions';
 import { useAppSelector } from '../../../store/selectors/appSelector';
 import { useAppDispatch } from '../../../store/services/appDispatch';
-import { addToCart, changeAmount, resetSecret } from '../../../store/slices/cart';
+import { addToCart, resetSecret } from '../../../store/slices/cart';
+import { getPaymentId } from '../../../utils/getPaymentId';
 
 import styles from './styles.module.scss';
 
 export const Cart: FC<MyProps> = ({ dish }) => {
     const dispatch = useAppDispatch();
-    const cartDishes = useAppSelector(state => state.cart.dishes);
     const secret = useAppSelector(state => state.cart.secret);
-    const cartDish = cartDishes.find(item => item.dish.id === dish.id);
-    const inCart = !!cartDish;
+
     const isDark = useAppSelector(state => state.theme.dark);
     const [amount, setAmount] = useState(1);
 
@@ -21,22 +20,22 @@ export const Cart: FC<MyProps> = ({ dish }) => {
         e.preventDefault();
 
         dispatch(addToCart({ dish, amount }));
+        setAmount(1);
     };
 
-    const handleClick = (diff: boolean) => {
+    const handleClick = async (diff: boolean) => {
         if (secret) {
+            const paymentId = getPaymentId(secret);
+
+            await cancelPayment({ paymentId });
             dispatch(resetSecret());
         }
 
-        if (inCart) {
-            dispatch(changeAmount({ id: dish.id, newAmount: cartDish.amount + (diff ? 1 : -1) }));
-        } else {
-            setAmount(prev => {
-                const newValue = prev + (diff ? 1 : -1);
+        setAmount(prev => {
+            const newValue = prev + (diff ? 1 : -1);
 
-                return newValue || 1;
-            });
-        }
+            return newValue || 1;
+        });
     };
 
     return (
@@ -55,11 +54,11 @@ export const Cart: FC<MyProps> = ({ dish }) => {
                 <input
                     disabled
                     className={`${styles.input} ${isDark ? styles.input_dark : ''}`}
-                    value={inCart ? (cartDishes.find(item => item.dish.id === dish.id) as CartDish).amount : amount}
+                    value={amount}
                     type="number"
                 />
             </div>
-            <button disabled={inCart} onClick={addManyToCart} className={styles.add} type="button">
+            <button onClick={addManyToCart} className={styles.add} type="button">
                 Add to Cart
             </button>
         </div>

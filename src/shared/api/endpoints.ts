@@ -12,7 +12,10 @@ export const ENDPOINTS = {
         ALL: '/dishes/',
         FAV: '/dishes/fav',
     },
-    PAYMENTS: '/payments',
+    PAYMENTS: {
+        DEFAULT: '/payments',
+        METHOD: '/payments/method',
+    },
     ORDER: '/order',
     DELIVERY: '/delivery',
 };

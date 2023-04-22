@@ -6,6 +6,6 @@ export * from './Order/Orders';
 export * from './Profile/Profile';
 export * from './Menu/Menu';
 export * from './Auth/Auth';
-export * from './Checkout/CheckoutForm';
+export * from './CheckoutForm/CheckoutForm';
 export * from './SuccessPayment/SuccessPayment';
 export * from './FailedPayment/FailedPayment';

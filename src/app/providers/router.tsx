@@ -1,12 +1,11 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 
 import { Account } from '../../components/Account';
 import { Forgot } from '../../components/Auth/Forgot';
 import { Signin } from '../../components/Auth/Signin/Signin';
 import { Signup } from '../../components/Auth/Signup/Signup';
 import { History } from '../../components/History';
+import { PaymentMethodSelector } from '../../components/PaymentMethodSelector';
 import { Payments } from '../../components/Payments';
 import {
     Auth,
@@ -22,8 +21,6 @@ import {
     SuccessPayment,
 } from '../../pages';
 import { App } from '../app';
-
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY || '');
 
 export const router = createBrowserRouter([
     {
@@ -95,11 +92,15 @@ export const router = createBrowserRouter([
                 element: <Orders />,
             },
             {
+                path: 'payments',
+                element: <PaymentMethodSelector />,
+
+            },
+            {
                 path: 'checkout',
                 element: (
-                    <Elements stripe={stripePromise}>
-                        <CheckoutForm />
-                    </Elements>
+
+                    <CheckoutForm />
                 ),
             },
             {

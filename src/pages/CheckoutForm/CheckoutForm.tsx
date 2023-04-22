@@ -9,10 +9,10 @@ import type {
 import { CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 import { Loader } from '../../components/Loader';
-import { createOrder, getSecret } from '../../shared/api/actions';
+import { createOrder } from '../../shared/api/actions';
 import { useAppSelector } from '../../store/selectors/appSelector';
 import { useAppDispatch } from '../../store/services/appDispatch';
-import { resetCartState, setSecret } from '../../store/slices/cart';
+import { resetCartState } from '../../store/slices/cart';
 
 import styles from './styles.module.scss';
 
@@ -20,9 +20,9 @@ export const CheckoutForm = () => {
     const isDark = useAppSelector(state => state.theme.dark);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useAppDispatch();
-    const { username, email } = useAppSelector(state => state.user);
+    const { email, username } = useAppSelector(state => state.user);
     const cart = useAppSelector(state => state.cart.dishes);
-    const prevSecret = useAppSelector(state => state.cart.secret);
+    const secret = useAppSelector(state => state.cart.secret);
     const stripe = useStripe();
     const elements = useElements();
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export const CheckoutForm = () => {
         navigate('../menu/home');
     }
 
-    const handleBack = (e: MouseEvent) => {
+    const handleBack = async (e: MouseEvent) => {
         e.preventDefault();
         navigate(-1);
     };
@@ -39,18 +39,10 @@ export const CheckoutForm = () => {
     const handleFormSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
-        const requestBody = cart.map(item => ({ id: item.dish.id, amount: item.amount }));
-        let secret = prevSecret;
 
         try {
-            if (!secret) {
-                const { data } = await getSecret(requestBody);
-
-                secret = data;
-                dispatch(setSecret(secret));
-            }
-
             const cardNumberElement = elements?.getElement(CardNumberElement) as StripeCardNumberElement;
+
             const createPaymentMethodData: CreatePaymentMethodData = {
                 type: 'card',
                 card: cardNumberElement,
@@ -61,6 +53,7 @@ export const CheckoutForm = () => {
             };
 
             const paymentMethodReq = await stripe?.createPaymentMethod(createPaymentMethodData);
+
             const result = await stripe?.confirmCardPayment(secret, {
                 payment_method: paymentMethodReq?.paymentMethod?.id,
                 receipt_email: email,

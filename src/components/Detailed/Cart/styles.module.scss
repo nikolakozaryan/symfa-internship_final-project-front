@@ -1,3 +1,4 @@
+@use "sass:color";
 @import '../../../app/styles/abstracts/mixins';
 @import '../../../app/styles/abstracts/variables';
 
@@ -86,13 +87,9 @@
   box-shadow: 0 .4rem .5rem #0000000D;
   cursor: pointer;
   transition: .4s;
+  transition: .2s;
 
-
-  &:disabled {
-    filter: grayscale(1)
-  }
-
-  &:not(:disabled):hover {
-    box-shadow: none;
+  &:active {
+    background: color.adjust($color-accent, $lightness: -10%)
   }
 }

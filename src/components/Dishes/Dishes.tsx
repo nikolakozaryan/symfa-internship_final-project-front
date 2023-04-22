@@ -12,8 +12,7 @@ import { NothingFound } from '../NothingFound';
 import styles from './styles.module.scss';
 
 export const Dishes: FC<MyProps> = ({ pageType, bannerVisible }) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const ref = useRef<any>();
+    const observer = useRef<IntersectionObserver>();
     const isHome = pageType === MenuRoutes.Home;
     const isFav = pageType === MenuRoutes.Favorite;
     const { dishes, page, pages, search, isLoading } = useAppSelector(state => (isHome ? state.menu : state.fav));
@@ -23,11 +22,11 @@ export const Dishes: FC<MyProps> = ({ pageType, bannerVisible }) => {
 
     const lastCardRef = useCallback(
         (node: HTMLDivElement) => {
-            if (ref.current) {
-                ref.current.disconnect();
+            if (observer.current) {
+                observer.current.disconnect();
             }
 
-            ref.current = new IntersectionObserver(entries => {
+            observer.current = new IntersectionObserver(entries => {
                 const entry = entries[0];
 
                 if (entry.isIntersecting && page < pages) {
@@ -42,7 +41,7 @@ export const Dishes: FC<MyProps> = ({ pageType, bannerVisible }) => {
             });
 
             if (node) {
-                ref.current.observe(node);
+                observer.current.observe(node);
             }
         },
         [dispatch, isFav, isHome, page, pages, search, taste, type],

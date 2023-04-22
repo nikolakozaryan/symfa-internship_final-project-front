@@ -1,4 +1,6 @@
+import { DEFAULT_CARD } from '../../shared/constants/defaultCard';
 import { useAppSelector } from '../../store/selectors/appSelector';
+import { parseCardNumber } from '../../utils/parseCardNumber';
 
 import styles from './styles.module.scss';
 
@@ -12,7 +14,7 @@ export const CreditCard = () => {
             </div>
             <div className={styles.card__name}>{username}</div>
             <div className={styles.card__info}>
-                <span className={styles.card__info_number}>5763 •••• •••• 2021</span>
+                <span className={styles.card__info_number}>{parseCardNumber(DEFAULT_CARD.number)}</span>
                 <p className={styles.card__info__creds}>
                     <span className={styles.card__info__creds_amount}>$3.464.98</span>
                     <img src="/assets/mastercard.png" alt="mastercard logo" />
